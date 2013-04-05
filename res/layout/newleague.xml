@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	style="@style/MediumText"
+	android:text="@string/selectbowler"
+	/>  
+<Spinner
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#ffffff"
+    android:background="@drawable/frame_button"
+    android:id="@+id/bowlerSpinner"
+	/>
+<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	style="@style/MediumText"
+	android:text="@string/leaguename"
+	/>
+<EditText
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:id="@+id/leagueName"
+  	/>
+<TextView 
+	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	style="@style/MediumText"
+  	android:text="@string/house"
+  	/>
+<EditText
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:id="@+id/house"
+  	/>
+<Button
+	android:id="@+id/accept"
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    style="@style/Buttons"
+    android:text="@string/accept"
+    />
+<Button
+	android:id="@+id/cancel"
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    style="@style/Buttons"
+    android:text="@string/cancel"
+    />
+<Button
+	android:id="@+id/list"
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    style="@style/Buttons"
+    android:text="List Leagues"
+    />
+</LinearLayout>
+</ScrollView>

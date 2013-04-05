@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+  
+<HorizontalScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+<LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  >
+  <Button
+        android:id="@+id/frame1button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+   <Button
+        android:id="@+id/frame2button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame3button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+ <Button
+        android:id="@+id/frame4button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+   <Button
+        android:id="@+id/frame5button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame6button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame7button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame8button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame9button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+  <Button
+        android:id="@+id/frame10button"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        style="@style/Buttons"/>
+</LinearLayout>
+</HorizontalScrollView>    
+
+    <View 
+           android:layout_height="20dip" 
+           android:layout_width="fill_parent"/>
+    
+<LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >
+
+	<TextView
+    android:layout_width="wrap_content"
+  	android:layout_height="wrap_content"
+  	android:text="Score"
+  	android:visibility="gone"
+    />
+	<TextView
+	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content"
+  	android:id="@+id/scoreTV"
+  	android:text="0"
+  	android:visibility="gone"
+	/>
+</LinearLayout>   
+
+<LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >
+
+  <CheckBox
+      android:layout_width="50dp"
+      android:layout_height="wrap_content"
+      android:button="@drawable/checkbox_selector" 
+  	  android:id="@+id/pin7" />
+
+  <CheckBox
+      android:layout_width="50dp"
+      android:layout_height="wrap_content"
+      android:button="@drawable/checkbox_selector"
+      android:id="@+id/pin8" 
+      />
+
+  <CheckBox
+      android:layout_width="50dp"
+      android:layout_height="wrap_content"
+      android:button="@drawable/checkbox_selector" 
+      android:id="@+id/pin9" />
+
+ <CheckBox
+     android:layout_width="50dp"
+     android:layout_height="wrap_content"
+     android:button="@drawable/checkbox_selector" 
+     android:id="@+id/pin10" />
+
+  </LinearLayout>
+   <LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >
+  <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin4"/>
+ <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin5"/>
+ <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin6"/>
+  </LinearLayout>
+   <LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >
+  <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin2"/>
+ <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin3"/>
+  </LinearLayout>
+   <LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >
+  <CheckBox
+  android:button="@drawable/checkbox_selector"
+  android:layout_width="50dp"
+  android:layout_height="wrap_content"
+  android:id="@+id/pin1"/>
+  </LinearLayout>
+  
+       <View 
+           android:layout_height="20dip" 
+           android:layout_width="fill_parent"/>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:orientation="horizontal" >
+
+      <Button
+          android:id="@+id/strikeButton"
+          android:layout_width="50dp"
+          android:layout_height="wrap_content"
+          style="@style/Buttons"
+          android:text="X" />
+      
+      <Button 
+          android:id="@+id/resetFrame"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          style="@style/Buttons"
+          android:text="Reset Frame" />
+      
+      <Button
+          android:id="@+id/spareButton"
+          android:layout_width="50dp"
+          android:layout_height="wrap_content"
+          style="@style/Buttons"
+          android:text="/" />
+
+</LinearLayout>
+<LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >  
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/MediumText"
+    android:text="@string/frame"
+    />
+<Spinner 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/frame_button"
+    android:id="@+id/frameSpinner"
+    />
+</LinearLayout>
+
+<RadioGroup
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:gravity="center">
+
+    <RadioButton
+        android:id="@+id/ball1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ball1" 
+        android:textColor="#ffffff"
+        android:checked="true"/>
+	<RadioButton
+        android:id="@+id/ball2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="@string/ball2" />
+    <RadioButton
+        android:id="@+id/ball3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ball3" 
+        android:textColor="#ffffff"
+        android:visibility="gone"/>
+ 
+</RadioGroup>
+
+<LinearLayout
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center_horizontal"
+  >     
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/ballused"
+    style="@style/MediumText"
+    />
+<Spinner 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ballSpinner"
+    android:textColor="#ffffff"
+    android:background="@drawable/frame_button"
+    />
+</LinearLayout>
+
+    <View 
+           android:layout_height="20dip" 
+           android:layout_width="fill_parent"/>
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/markTV"
+    style="@style/MediumText"
+    />
+
+<com.dewald.goodBowler.CustomSeekBar
+    android:id="@+id/markSeekBar"
+    android:layout_width="fill_parent"
+    android:layout_height="175dp"
+    />
+
+<View 
+           android:layout_height="20dip" 
+           android:layout_width="fill_parent"/>
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/feetTV"
+    style="@style/MediumText"
+    />
+
+<com.dewald.goodBowler.CustomSeekBar
+    android:id="@+id/feetSeekBar"
+    android:layout_width="fill_parent"
+    android:layout_height="175dp"
+    />
+
+	<View 
+           android:layout_height="20dip" 
+           android:layout_width="fill_parent"/>
+
+<Button 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/acceptButton"
+    style="@style/Buttons"
+    android:text="@string/next"
+    />
+
+<Button 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/resetButton"
+    style="@style/Buttons"
+    android:text="@string/reset"
+    />
+
+<Button 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/FinalButton"
+    style="@style/Buttons"
+    android:text="@string/finalize"
+    />
+</LinearLayout>
+</ScrollView>

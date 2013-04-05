@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+    
+    <TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selectbowler"
+    style="@style/MediumText"
+    />
+<Spinner
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#ffffff"
+    android:background="@drawable/frame_button"
+    android:id="@+id/bowlerSpinner"
+	/>
+<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/betweendate"
+    style="@style/MediumText"
+    />
+<LinearLayout 
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+		
+    	<TextView
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:id="@+id/tvDate1"
+    		style="@style/MediumText"
+    	    />
+
+    	<Button
+    	    android:id="@+id/dateButton1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    style="@style/Buttons"
+    	    android:text="Pick Date" />
+    	
+    	<TextView
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:id="@+id/tvDate2"
+    		style="@style/MediumText"
+    	    />
+
+    	<Button
+    	    android:id="@+id/dateButton2"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    style="@style/Buttons"
+    	    android:text="Pick Date" />
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/listGames"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Buttons"
+        android:text="List Game Scores" />
+
+    <Button
+        android:id="@+id/listScores"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Buttons"
+        android:text="List Series Scores" />
+
+    <Button
+        android:id="@+id/strikeSpares"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Buttons"
+        android:text="Strikes/Spares per Game" />
+
+    <Button
+        android:id="@+id/sparesByPin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Buttons"
+        android:text="Single Pin Spares by Pin Number" />
+
+</LinearLayout>
+</ScrollView>

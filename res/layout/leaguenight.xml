@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+<TextView
+    android:id="@+id/nameTV"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    style="@style/LargeText" />
+
+<TextView
+    android:id="@+id/leagueTV"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    style="@style/LargeText" />
+
+<TextView
+    android:id="@+id/dateTV"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    style="@style/LargeText" />
+
+<TextView
+    android:id="@+id/gameTV"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/gameone"
+    style="@style/MediumText" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <EditText
+        android:id="@+id/etGame1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+    
+
+    <Button
+        android:id="@+id/btnGame1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="@style/Buttons"
+        android:text="@string/frameScore" />
+
+</LinearLayout>
+
+<LinearLayout 
+    android:id="@+id/llTop"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">"
+</LinearLayout>
+    
+
+<!-- <TextView -->
+<!--     android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:text="@string/gametwo" -->
+<!--     style="@style/MediumText" /> -->
+
+<!-- <LinearLayout -->
+<!--     android:layout_width="match_parent" -->
+<!--     android:layout_height="wrap_content" > -->
+
+<!--     <EditText -->
+<!--         android:id="@+id/gametwo" -->
+<!--         android:layout_width="100dp" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:inputType="number" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/frameButtonGameTwo" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_weight="1" -->
+<!--         style="@style/Buttons" -->
+<!--         android:text="@string/frameScore"/> -->
+
+<!-- </LinearLayout> -->
+
+<!-- <TextView -->
+<!--     android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:text="@string/gamethree" -->
+<!--     style="@style/MediumText" /> -->
+
+<!-- <LinearLayout -->
+<!--     android:layout_width="match_parent" -->
+<!--     android:layout_height="wrap_content" > -->
+
+<!--     <EditText -->
+<!--         android:id="@+id/gamethree" -->
+<!--         android:layout_width="100dp" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:inputType="number" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/frameButtonGameThree" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_weight="1" -->
+<!--         style="@style/Buttons" -->
+<!--         android:text="@string/frameScore"/> -->
+
+<!-- </LinearLayout> -->
+
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/series"
+    style="@style/MediumText" />
+
+<EditText
+    android:id="@+id/series"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:inputType="number" />
+
+<LinearLayout
+ 	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" >
+
+<Button
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Add Game"
+	style="@style/Buttons"
+	android:id="@+id/addButton"
+	/>
+
+<Button
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Remove Game"
+	style="@style/Buttons"
+	android:id="@+id/removeButton"
+	/>
+
+</LinearLayout>
+
+<Button
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/accept"
+	style="@style/Buttons"
+	android:id="@+id/acceptButton"
+	/>
+<Button
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/list"
+	style="@style/Buttons"
+	android:id="@+id/listButton"
+	/>
+
+</LinearLayout>
+</ScrollView>

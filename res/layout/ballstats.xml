@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/background">
+
+<LinearLayout 
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/bowlerLeagueBallName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/MediumText"
+        />
+    <TextView
+        android:id="@+id/dateRange"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/MediumText"
+        />
+    
+    <View 
+        android:layout_height="10dp"
+        android:layout_width="fill_parent"
+        />
+    
+    <TableLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:stretchColumns="1" >
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Strike Stats"
+            android:gravity="center"
+            style="@style/TableText"/>"
+        
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Number of Strikes"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableNumStrikes"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Strike Chances"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableStrikeChances"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+         <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Strike Percentage"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableStrikePercent"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+    </TableLayout>
+    
+    <View 
+        android:layout_height="10dp"
+        android:layout_width="fill_parent"/>
+    
+    <TableLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:stretchColumns="1" >
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Spare Stats"
+            android:gravity="center"
+            style="@style/TableText"/>"
+        
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Number of Spares"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableNumSpares"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Spare Chances"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableSpareChances"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+         <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Spare Percentage"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableSparePercent"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        </TableLayout>
+        
+        <View 
+        android:layout_height="10dp"
+        android:layout_width="fill_parent"
+        />
+        
+        <TableLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:stretchColumns="1" >
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Single Pin Spare Stats"
+            android:gravity="center"
+            style="@style/TableText"/>"
+        
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Single Pin Conversions"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableSinglePinConversion"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Single Pin Chances"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableSinglePinChances"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Single Pin Conversion %"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableSinglePinPercent"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        </TableLayout>
+        
+        <View 
+        android:layout_height="10dp"
+        android:layout_width="fill_parent"
+        />
+        
+        <TableLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:stretchColumns="1" >
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Multiple Pin Spare Stats"
+            android:gravity="center"
+            style="@style/TableText"/>"
+        
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Multiple Pin Conversions"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableMultiPinConversion"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Multiple Pin Chances"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableMultiPinChances"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+            android:layout_column="1"
+            android:text="Multiple Pin Conversion %"
+            style="@style/TableText"/>
+            
+            <TextView
+            android:id="@+id/tableMultiPinPercent"
+            android:text="0"
+            style="@style/TableText"/>
+        </TableRow>
+    </TableLayout>
+    
+
+</LinearLayout>
+</ScrollView>

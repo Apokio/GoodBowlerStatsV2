@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background" >
+
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/titletext" />
+
+<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selectbowler"
+    style="@style/MediumText"
+    />
+<Spinner
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bowlerSpinner"
+    android:textColor="#ffffff"
+    android:background="@drawable/frame_button"
+	/>
+<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selectleague"
+    style="@style/MediumText"
+    />
+<Spinner
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/leagueSpinner"
+    android:textColor="#ffffff"
+    android:background="@drawable/frame_button"
+	/>
+<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/date"
+    style="@style/MediumText"
+    />
+<LinearLayout 
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+		
+    	<TextView
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:id="@+id/tvDate"
+    		style="@style/MediumText"
+    	    />
+
+    	<Button
+    	    android:id="@+id/dateButton"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:text="Pick Date" 
+    	    style="@style/Buttons"
+    	    />
+
+</LinearLayout>
+<Button
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scoreButton"
+    android:text="@string/go"
+    style="@style/Buttons"
+	/>
+
+<Button
+    android:id="@+id/statButton"
+    style="@style/Buttons"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/stats" />
+
+<Button
+    android:id="@+id/graphicalStatButton"
+    style="@style/Buttons"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/graphicalstats" />
+
+<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="OR"
+    style="@style/MediumText"
+	/>
+<Button
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/newBowlerButton"
+    android:text="@string/createbowler"
+    style="@style/Buttons"
+	/>
+<Button
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/newLeagueButton"
+    android:text="@string/createleague"
+    style="@style/Buttons"
+	/>
+<Button
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/newBallButton"
+    android:text="@string/newBall"
+    style="@style/Buttons"
+	/>
+</LinearLayout>
+</ScrollView>

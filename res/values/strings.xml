@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, NewBowler!</string>
+    <string name="app_name">Good Bowler Stats</string>
+    <string name="name">Bowler Name</string>
+    <string name="average">Enter Average</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="selectbowler">Select Bowler</string>
+    <string name="createbowler">Create New Bowler</string>
+    <string name="go">Enter Scores</string>
+    <string name="selectleague">Select League Or Open Bowling</string>
+    <string name="createleague">Enter New League</string>
+    <string name="leaguename">League Name</string>
+    <string name="house">House Name</string>
+    <string name="date">Enter Date</string>
+    <string name="gameone">Enter Game 1 Score</string>
+    <string name="gametwo">Enter Game 2 Score</string>
+    <string name="gamethree">Enter Game 3 Score</string>
+    <string name="series">Series Score</string>
+    <string name="list">List Scores</string>
+    <string name="frame">Frame Number</string>
+    <string name="ball1">Ball 1</string>
+    <string name="ball2">Ball 2</string>
+    <string name="ball3">Ball 3</string>
+    <string name="ballused">Ball Thrown</string>
+    <string name="clear">Clear</string>
+    <string name="frameScore">Detail Score By Pins</string>
+    <string name="finalize">Finalize Game Score</string>
+    <string name="score">Score: </string>
+    <string name="next">Accept(Next Ball)</string>
+    <string name="reset">Reset Pins</string>
+    <string name="stats">View Stats</string>
+    <string name="graphicalstats">View Graphical Stats</string>
+    <string name="betweendate">Pick Start and End Dates</string>
+    <string name="singledate">Single Date</string>
+    <string name="daterange">Date Range</string>
+    <string name="alldates">All Dates</string>
+    <string name="newBall">Bowling Ball Management</string>
+    <string name="ballName">Enter Ball Name or Description</string>
+    <string name="listBalls">List Bowling Balls</string>
+    <string-array name="frames_array">
+        <item >1</item>
+        <item >2</item>
+        <item >3</item>
+        <item >4</item>
+        <item >5</item>
+        <item >6</item>
+        <item >7</item>
+        <item >8</item>
+        <item >9</item>
+        <item >10</item>
+    </string-array>
+</resources>
