@@ -43,9 +43,6 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	private String regDate;
 	private String bowler;
 	private String league;
-	private Integer gameOne = 0;
-	private Integer gameTwo = 0;
-	private Integer gameThree = 0;
 	private Integer series = 0;
 	
 	//variables for the add and remove game feature to track 1 - 20 games per date, league, bowler
@@ -58,7 +55,8 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 				R.id.ll11, R.id.ll12, R.id.ll13, R.id.ll14, R.id.ll15, R.id.ll16, R.id.ll17, R.id.ll18, R.id.ll19, R.id.ll20};
 	private int tvArray[] = {R.id.tvGame1, R.id.tvGame2, R.id.tvGame3, R.id.tvGame4, R.id.tvGame5, R.id.tvGame6, R.id.tvGame7, R.id.tvGame8, R.id.tvGame9, R.id.tvGame10,
 				R.id.tvGame11, R.id.tvGame12, R.id.tvGame13, R.id.tvGame14, R.id.tvGame15, R.id.tvGame16, R.id.tvGame17, R.id.tvGame18, R.id.tvGame19, R.id.tvGame20};
-	
+	//variable to hold the scores from the database or the scores to go into the database
+	private int[] scoreArray = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,7 +97,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
         llTop = (LinearLayout)findViewById(R.id.llTop);
         
         getGames();
-        //checkLeagueNightExists();
+        checkLeagueNightExists();
         //calculateSeries();
         
         
@@ -198,7 +196,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		}
 	}
 	
-	//this adds the game afte the add game button is pressed
+	//this adds the game after the add game button is pressed
 	private void addGame(){
 		if(gameCount == 19){
 			Toast t = Toast.makeText(this, "Cannot add more than 20 Games", Toast.LENGTH_LONG);
@@ -248,7 +246,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 					//mDbHelper.deleteBowlerLeagueNight(bowler, league, sqlDate);
 					//Log.w("League Night", "Deleted");
 				}
-			//mDbHelper.createLeagueNight(bowler, league, date, gameOne, gameTwo, gameThree, series);
+			mDbHelper.createLeagueNight(bowler, league, date, gameOne, gameTwo, gameThree, series);
 			finish();
 			}else{
 				Toast t = Toast.makeText(this, "Values must be between 0 and 300", Toast.LENGTH_SHORT);
@@ -269,48 +267,45 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		case R.id.removeButton:
 			removeGame();
 			break;
-//		case R.id.frameButtonGameOne:
-//			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
-//			i.putExtra("gameNumber", "1");
-//			i.putExtra("sqlDate", sqlDate);
-//			i.putExtra("date", regDate);
-//			i.putExtra("bowler", bowler);
-//			i.putExtra("league", league);
-//			startActivityForResult(i, 1);
-//			break;
-//		case R.id.frameButtonGameTwo:
-//			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
-//			i.putExtra("gameNumber", "2");
-//			i.putExtra("sqlDate", sqlDate);
-//			i.putExtra("date", regDate);
-//			i.putExtra("bowler", bowler);
-//			i.putExtra("league", league);
-//			startActivityForResult(i, 2);
-//			break;
-//		case R.id.frameButtonGameThree:
-//			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
-//			i.putExtra("gameNumber", "3");
-//			i.putExtra("sqlDate", sqlDate);
-//			i.putExtra("date", regDate);
-//			i.putExtra("bowler", bowler);
-//			i.putExtra("league", league);
-//			startActivityForResult(i, 3);
-//			break;
+		case R.id.btnGame1:
+		case R.id.btnGame2:
+		case R.id.btnGame3:
+		case R.id.btnGame4:
+		case R.id.btnGame5:
+		case R.id.btnGame6:
+		case R.id.btnGame7:
+		case R.id.btnGame8:
+		case R.id.btnGame9:
+		case R.id.btnGame10:
+		case R.id.btnGame11:
+		case R.id.btnGame12:
+		case R.id.btnGame13:
+		case R.id.btnGame14:
+		case R.id.btnGame15:
+		case R.id.btnGame16:
+		case R.id.btnGame17:
+		case R.id.btnGame18:
+		case R.id.btnGame19:
+		case R.id.btnGame20:
+			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
+			i.putExtra("gameNumber", getGameNumberFromView(v));
+			i.putExtra("sqlDate", sqlDate);
+			i.putExtra("date", regDate);
+			i.putExtra("bowler", bowler);
+			i.putExtra("league", league);
+			startActivityForResult(i, 1);
+			break;
 		}
-		
 	}
 
 	@Override
 	public void afterTextChanged(Editable s) {
 		try{
-			if (!et1Score.getText().toString().equals("")){
-			gameOne = Integer.parseInt(et1Score.getText().toString());
-			}
-			if (!et2Score.getText().toString().equals("")){
-			gameTwo = Integer.parseInt(et2Score.getText().toString());
-			}
-			if (!et3Score.getText().toString().equals("")){
-			gameThree = Integer.parseInt(et3Score.getText().toString());
+			for(int i = 0; i < gameCount; i++){
+				EditText et = (EditText)findViewById(etArray[i]);
+				if(!et.getText().toString().equals("")){
+					scoreArray[i] = Integer.parseInt(et.getText().toString());
+				}
 			}
 		}catch(NumberFormatException nfe){
 			Toast t = Toast.makeText(this, "Values must be a number", Toast.LENGTH_SHORT);
@@ -358,23 +353,35 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	}
 	
 	private void calculateSeries() {
-		series = gameOne + gameTwo + gameThree;
-		etSeries.setText(series.toString());
+			for(int i = 0; i < scoreArray.length; i++){
+				if(scoreArray[i] != -1){
+					series = series + scoreArray[i];
+				}
+			}
 		
 	}
 	
-	/*not used in version 2.0
+	
 	private void checkLeagueNightExists(){
 		if(mDbHelper.checkLeagueNightRecords(bowler, league, sqlDate)){
 			Cursor c = mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate);
 			c.moveToFirst();
-			et1Score.setText(c.getString(0));
-			//Log.v("game1", c.getString(0));
-			et2Score.setText(c.getString(1));
-			et3Score.setText(c.getString(2));
-			etSeries.setText(c.getString(3));
-			c.close();
+			for(int i = 0; i < c.getCount(); i++){
+				scoreArray[c.getInt(1) - 1] = c.getInt(0);
+				Log.v("Score", "" + scoreArray[c.getInt(1) - 1]);
+				Log.v("Game #", "" + c.getInt(1));
+			}
 		}
-	}*/
+	}
+	
+	private String getGameNumberFromView(View v){
+		String gameNumber = "";
+			for(int i = 0; i < btnArray.length; i++){
+				if(v.getId() == btnArray[i]);{
+					gameNumber = "" + i;
+				}
+			}
+		return gameNumber;
+	}
 	
 }

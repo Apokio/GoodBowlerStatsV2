@@ -109,7 +109,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
         regDate = extras.getString("date");
         bowler = extras.getString("bowler");
         league = extras.getString("league");
-        //Log.v("gameNumber", gameNumber);
+        Log.v("gameNumber", gameNumber);
         
         pin1 = (CheckBox)findViewById(R.id.pin1);
         pin2 = (CheckBox)findViewById(R.id.pin2);
