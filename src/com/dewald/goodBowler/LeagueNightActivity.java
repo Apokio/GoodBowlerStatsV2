@@ -106,13 +106,16 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	@Override
 	public void onStop(){
 		super.onStop();
-		//fix this later when we rewrite to add more than three games.
-		/* if(mDbHelper.checkLeagueNightRecords(bowler, league, sqlDate)){
-			mDbHelper.deleteBowlerLeagueNight(bowler, league, sqlDate);
-			//Log.w("League Night", "Deleted");
+		for(int i = 0; i < gameCount; i++){
+			if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
+				Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++);
+				int id = c.getInt(0);
+				c.close();
+				mDbHelper.updateGameScore("" + scoreArray[i], id);
+			}else{
+			mDbHelper.createGameScore(bowler, league, sqlDate, "" + i++, "" + scoreArray[i]);
+			}
 		}
-		mDbHelper.createLeagueNight(bowler, league, sqlDate, gameOne, gameTwo, gameThree, series);
-		*/
 	} 
 	
 	@Override
@@ -123,48 +126,52 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	
 	@Override
 	public void finish(){
-		//fix this when we rewrite to add more than three game
-		// TODO fix this
 		String date = sqlDate;
-			if(gameOne  >= 0 && gameOne <= 300 && gameTwo >= 0 && gameTwo <= 300 && gameThree >= 0 && gameThree <= 300 ){
+			if(verifyScores()){
 			//check to see database entry already exists and delete it so multiple records do not exist
-			//if(mDbHelper.checkLeagueNightRecords(bowler, league, sqlDate)){
-				//mDbHelper.deleteBowlerLeagueNight(bowler, league, sqlDate);
-				//Log.w("League Night", "Deleted");
-			//}
-		//mDbHelper.createLeagueNight(bowler, league, date, gameOne, gameTwo, gameThree, series);
-		super.finish();
-		}else{
-			Toast t = Toast.makeText(this, "Values must be between 0 and 300", Toast.LENGTH_SHORT);
-			t.show();
-		}
+			for(int i = 0; i < gameCount; i++){
+				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
+					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, "" + i++);
+					int id = c.getInt(0);
+					c.close();
+					mDbHelper.updateGameScore("" + scoreArray[i], id);
+				}else{
+				mDbHelper.createGameScore(bowler, league, date, "" + i++, "" + scoreArray[i]);
+				}
+			}
+			super.finish();
+			}else{
+				Toast t = Toast.makeText(this, "Values must be between 0 and 300", Toast.LENGTH_SHORT);
+				t.show();
+			}	
 	}
 	
-	@Override
-	public void onSaveInstanceState(Bundle savedInstanceState){
-		savedInstanceState.putString("SQLDate", sqlDate);
-		savedInstanceState.putString("RegDate", regDate);
-		savedInstanceState.putString("Bowler", bowler);
-		savedInstanceState.putString("League", league);
-		savedInstanceState.putString("GameOne", et1Score.getText().toString());
-		savedInstanceState.putString("GameTwo", et2Score.getText().toString());
-		savedInstanceState.putString("GameThree", et2Score.getText().toString());
-		savedInstanceState.putString("Series", etSeries.getText().toString());
-		super.onSaveInstanceState(savedInstanceState);
-	}
-	
-	@Override
-	public void onRestoreInstanceState(Bundle savedInstanceState) {
-		super.onRestoreInstanceState(savedInstanceState);
-		sqlDate = savedInstanceState.getString("SQLDate");
-		regDate = savedInstanceState.getString("RegDate");
-		bowler = savedInstanceState.getString("Bowler");
-		league = savedInstanceState.getString("League");
-		et1Score.setText(savedInstanceState.getString("GameOne"));
-		et2Score.setText(savedInstanceState.getString("GameTwo"));
-		et3Score.setText(savedInstanceState.getString("GameThree"));
-		etSeries.setText(savedInstanceState.getString("Series"));
-	}
+	//TODO fix this stuff
+//	@Override
+//	public void onSaveInstanceState(Bundle savedInstanceState){
+//		savedInstanceState.putString("SQLDate", sqlDate);
+//		savedInstanceState.putString("RegDate", regDate);
+//		savedInstanceState.putString("Bowler", bowler);
+//		savedInstanceState.putString("League", league);
+//		savedInstanceState.putString("GameOne", et1Score.getText().toString());
+//		savedInstanceState.putString("GameTwo", et2Score.getText().toString());
+//		savedInstanceState.putString("GameThree", et3Score.getText().toString());
+//		savedInstanceState.putString("Series", etSeries.getText().toString());
+//		super.onSaveInstanceState(savedInstanceState);
+//	}
+//	
+//	@Override
+//	public void onRestoreInstanceState(Bundle savedInstanceState) {
+//		super.onRestoreInstanceState(savedInstanceState);
+//		sqlDate = savedInstanceState.getString("SQLDate");
+//		regDate = savedInstanceState.getString("RegDate");
+//		bowler = savedInstanceState.getString("Bowler");
+//		league = savedInstanceState.getString("League");
+//		et1Score.setText(savedInstanceState.getString("GameOne"));
+//		et2Score.setText(savedInstanceState.getString("GameTwo"));
+//		et3Score.setText(savedInstanceState.getString("GameThree"));
+//		etSeries.setText(savedInstanceState.getString("Series"));
+//	}
 	
 	//this will query the database to get the number of games if data is entered for that date, bowler, and league
 	//if it is a new entry to the database it will send 3 to the loadGames so the default of 3 games will show up
@@ -238,16 +245,19 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		switch(v.getId()) {
 		case R.id.acceptButton:
 			String date = sqlDate;
-			if(gameOne  >= 0 && gameOne <= 300 && gameTwo >= 0 && gameTwo <= 300 && gameThree >= 0 && gameThree <= 300 ){
-				//TODO
-				//check to see database entry already exists and delete it so multiple records do not exist
-				//change this to an update method
-				if(mDbHelper.checkLeagueNightRecords(bowler, league, sqlDate)){
-					//mDbHelper.deleteBowlerLeagueNight(bowler, league, sqlDate);
-					//Log.w("League Night", "Deleted");
+			if(verifyScores()){
+			//check to see database entry already exists and delete it so multiple records do not exist
+			for(int i = 0; i < gameCount; i++){
+				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
+					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, "" + i++);
+					int id = c.getInt(0);
+					c.close();
+					mDbHelper.updateGameScore("" + scoreArray[i], id);
+				}else{
+				mDbHelper.createGameScore(bowler, league, date, "" + i++, "" + scoreArray[i]);
 				}
-			mDbHelper.createLeagueNight(bowler, league, date, gameOne, gameTwo, gameThree, series);
-			finish();
+			}
+			super.finish();
 			}else{
 				Toast t = Toast.makeText(this, "Values must be between 0 and 300", Toast.LENGTH_SHORT);
 				t.show();
@@ -384,4 +394,14 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		return gameNumber;
 	}
 	
+	private boolean verifyScores(){
+		boolean valid = false;
+			for(int i = 0; i < gameCount; i++){
+				valid = (scoreArray[i] >= 0 && scoreArray[i] <= 300);
+				if(!valid){
+					break;
+				}
+			}
+		return valid;
+	}
 }

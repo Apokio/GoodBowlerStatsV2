@@ -201,7 +201,7 @@ public class BowlerDatabaseAdapter {
 		return database.query(LEAGUE_NIGHT_TABLE, new String[] { KEY_ROWID, KEY_BOWLER_NAME, KEY_LEAGUE_NAME, KEY_DATE, KEY_GAME_ONE_SCORE, KEY_GAME_TWO_SCORE,
 				KEY_GAME_THREE_SCORE, KEY_SERIES_SCORE }, KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"", null, null, null, null);
 		
-	} */
+	}*/
 	
 	 public Cursor fetchScoresForBowlerLeagueDate(String bowler, String league, String date) {
 		Log.e("Query", KEY_BOWLER_NAME + "='" + bowler +"' AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +" AND " + KEY_DATE + "='" +date+"'");
@@ -385,6 +385,16 @@ public class BowlerDatabaseAdapter {
 		return database.update(GAME_TABLE, values, "KEY_ROWID = " + id , null);
 	}
 	
+	public long createGameScore(String bowlerName, String leagueName, String date, String gameNumber, String score) {
+		ContentValues initialValues = createGameScoreContentValues(bowlerName, leagueName, date, gameNumber, score);
+		return database.insert(GAME_TABLE, null, initialValues);
+	}
+
+	public long updateGameScore(String score, int id) {
+		ContentValues values = updateGameContentScoreValues(score);
+		return database.update(GAME_TABLE, values, "KEY_ROWID = " + id , null);
+	}
+
 	public Cursor checkGameRecords(String bowler, String league, String date, String gameNumber){
 		//boolean exists = false;
 		//Cursor c = database.query(GAME_TABLE, new String[] {KEY_BOWLER_NAME}, KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + 
@@ -469,5 +479,23 @@ public class BowlerDatabaseAdapter {
 		}
 		return values;
 		
+	}
+	
+	private ContentValues createGameScoreContentValues(String bowlerName, String leagueName, String date, String gameNumber, String score) {
+		ContentValues values = new ContentValues();
+		values.put(KEY_BOWLER_NAME, bowlerName);
+		values.put(KEY_LEAGUE_NAME, leagueName);
+		values.put(KEY_DATE, date);
+		values.put(KEY_GAME_NUMBER, gameNumber);
+		values.put(KEY_SCORE, score);
+	
+		return values;
+	}
+	
+	private ContentValues updateGameContentScoreValues(String score) {
+		ContentValues values = new ContentValues();
+		values.put(KEY_SCORE, score);
+	
+		return values;
 	}
 }

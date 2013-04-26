@@ -483,20 +483,33 @@ public class ScoreCalculator {
 	}
 	
 	//checks for how many spares where made
-	public Integer numSpares(String[][] scores){
-		Integer spareCount = 0;
-			for(int r = 0; r < scores.length; r++){
-				for(int c = 0; c < 19; c+=2){
-					if(scores[r][c].length() + scores[r][c+1].length()  == 10){
-						spareCount = spareCount + 1;
+		public Integer numSpares(String[][] scores){
+			Integer spareCount = 0;
+			String[] s = new String[21];
+				for(int r = 0; r < scores.length; r++){
+					for(int c = 0; c < 21; c++){
+						s[c] = scores[r][c];
 					}
+					spareCount = (int) (spareCount + sparesPerGame(s));
+					/*for(int c = 0; c < 17; c+=2){
+						if(scores[r][c].length() != 10){
+							if(scores[r][c].length() + scores[r][c+1].length()  == 10){
+								spareCount = spareCount + 1;
+							}
+						}
+					}
+					if(scores[r][18].length() != 10){
+						if(scores[r][18].length() + scores[r][19].length() == 10){
+							spareCount = spareCount + 1;
+						}
+					}else if(scores[r][19].length() != 10){
+						if(scores[r][19].length() + scores[r][20].length()  == 10){
+						spareCount = spareCount + 1;
+						}
+					}*/
 				}
-				if(scores[r][19].length() + scores[r][20].length()  == 10){
-					spareCount = spareCount + 1;
-				}
-			}
-		return spareCount;
-	}
+			return (Integer)spareCount;
+		}
 	
 	//checks to see how many chances you had to shoot a spare
 	public Integer spareChances(String[][] scores){
