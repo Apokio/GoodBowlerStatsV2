@@ -98,7 +98,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
         
         getGames();
         checkLeagueNightExists();
-        //calculateSeries();
+        calculateSeries();
         
         
 	}
@@ -176,7 +176,13 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	//this will query the database to get the number of games if data is entered for that date, bowler, and league
 	//if it is a new entry to the database it will send 3 to the loadGames so the default of 3 games will show up
 	private void getGames(){
-		loadGames(3);
+		int numGames = 0;
+		if(mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate).getCount() > 0){
+			numGames = mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate).getCount();
+		}else{
+			numGames = 3;
+		}
+		loadGames(numGames);
 	}
 	
 	//this loads the games in the layout the first game input is added in the layout and the rest are set by what is in the database
@@ -196,10 +202,23 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			Button btn = (Button)gameView.findViewById(R.id.btn);
 			LinearLayout ll = (LinearLayout)gameView.findViewById(R.id.ll);
 			et.setId(etArray[gameCount]);
+			et.addTextChangedListener(this);
+			et.setText("0");
 			btn.setId(btnArray[gameCount]);
+			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
 			tv.setId(tvArray[gameCount]);
 			parent.addView(gameView);
+		}
+		Cursor c = mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate);
+		if(c.getCount() > 0){
+			c.moveToFirst();
+			for(int i = 0; i < c.getCount(); i++){
+				int gameNum = c.getInt(1);
+				EditText et = (EditText)findViewById(etArray[gameNum - 1]);
+				et.setText(c.getString(0));
+				c.moveToNext();
+			}
 		}
 	}
 	
@@ -221,7 +240,10 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			LinearLayout ll = (LinearLayout)gameView.findViewById(R.id.ll);
 			tv.setId(tvArray[gameCount]);
 			et.setId(etArray[gameCount]);
+			et.addTextChangedListener(this);
+			et.setText("0");
 			btn.setId(btnArray[gameCount]);
+			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
 			llTop.addView(gameView);
 		}
@@ -242,6 +264,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	}
 	@Override
 	public void onClick(View v) {
+		int viewId = v.getId();
 		switch(v.getId()) {
 		case R.id.acceptButton:
 			String date = sqlDate;
@@ -298,7 +321,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		case R.id.btnGame19:
 		case R.id.btnGame20:
 			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
-			i.putExtra("gameNumber", getGameNumberFromView(v));
+			i.putExtra("gameNumber", getGameNumberFromView(viewId));
 			i.putExtra("sqlDate", sqlDate);
 			i.putExtra("date", regDate);
 			i.putExtra("bowler", bowler);
@@ -363,12 +386,13 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	}
 	
 	private void calculateSeries() {
+		series = 0;
 			for(int i = 0; i < scoreArray.length; i++){
 				if(scoreArray[i] != -1){
 					series = series + scoreArray[i];
 				}
 			}
-		
+		etSeries.setText("" + series);
 	}
 	
 	
@@ -380,15 +404,17 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 				scoreArray[c.getInt(1) - 1] = c.getInt(0);
 				Log.v("Score", "" + scoreArray[c.getInt(1) - 1]);
 				Log.v("Game #", "" + c.getInt(1));
+				c.moveToNext();
 			}
 		}
 	}
 	
-	private String getGameNumberFromView(View v){
+	private String getGameNumberFromView(int v){
 		String gameNumber = "";
 			for(int i = 0; i < btnArray.length; i++){
-				if(v.getId() == btnArray[i]);{
-					gameNumber = "" + i;
+				if(v == btnArray[i]){
+					gameNumber = "" + (i + 1);
+					Log.v("GameNumber", gameNumber);
 				}
 			}
 		return gameNumber;

@@ -183,7 +183,6 @@ public class BowlerDatabaseAdapter {
 		return database.insert(LEAGUE_NIGHT_TABLE, null, initialValues);
 	} */
 	
-	//not used in version 2.0 must rewrite to write to the game table only
 	/*public Cursor fetchAllLeagueNight() {
 		return database.query(LEAGUE_NIGHT_TABLE, new String[] { KEY_ROWID, KEY_BOWLER_NAME, KEY_LEAGUE_NAME, KEY_DATE, KEY_GAME_ONE_SCORE, KEY_GAME_TWO_SCORE,
 								KEY_GAME_THREE_SCORE, KEY_SERIES_SCORE }, null, null, null, null, null);
