@@ -203,7 +203,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			LinearLayout ll = (LinearLayout)gameView.findViewById(R.id.ll);
 			et.setId(etArray[gameCount]);
 			et.addTextChangedListener(this);
-			et.setText("0");
+			//et.setText("0");
 			btn.setId(btnArray[gameCount]);
 			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
@@ -241,11 +241,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			tv.setId(tvArray[gameCount]);
 			et.setId(etArray[gameCount]);
 			et.addTextChangedListener(this);
-			et.setText("0");
+			//et.setText("0");
 			btn.setId(btnArray[gameCount]);
 			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
 			llTop.addView(gameView);
+			Log.v("GameCount", "" + gameCount);
 		}
 	}
 	
@@ -321,12 +322,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		case R.id.btnGame19:
 		case R.id.btnGame20:
 			i = new Intent(LeagueNightActivity.this, ScoreCardActivity.class);
-			i.putExtra("gameNumber", getGameNumberFromView(viewId));
+			i.putExtra("gameNumber", "" + getGameNumberFromView(viewId));
 			i.putExtra("sqlDate", sqlDate);
 			i.putExtra("date", regDate);
 			i.putExtra("bowler", bowler);
 			i.putExtra("league", league);
-			startActivityForResult(i, 1);
+			startActivityForResult(i, getGameNumberFromView(viewId));
 			break;
 		}
 	}
@@ -334,10 +335,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	@Override
 	public void afterTextChanged(Editable s) {
 		try{
-			for(int i = 0; i < gameCount; i++){
+			for(int i = 0; i < gameCount + 1; i++){
 				EditText et = (EditText)findViewById(etArray[i]);
 				if(!et.getText().toString().equals("")){
 					scoreArray[i] = Integer.parseInt(et.getText().toString());
+				Log.v("TCCount", "" + i);
+				Log.v("TCGameCount", "" + gameCount);
 				}
 			}
 		}catch(NumberFormatException nfe){
@@ -365,23 +368,27 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if(resultCode == 1){
-			switch(requestCode){
-			case 1:
-				Bundle bundle1 = data.getExtras();
-				String totalScore1 = bundle1.getString("totalScore");
-				et1Score.setText(totalScore1);
-				break;
-			case 2:
-				Bundle bundle2 = data.getExtras();
-				String totalScore2 = bundle2.getString("totalScore");
-				et2Score.setText(totalScore2);
-				break;
-			case 3:
-				Bundle bundle3 = data.getExtras();
-				String totalScore3 = bundle3.getString("totalScore");
-				et3Score.setText(totalScore3);
-				break;
-			}
+//			switch(requestCode){
+//			case 1:
+//				Bundle bundle1 = data.getExtras();
+//				String totalScore1 = bundle1.getString("totalScore");
+//				et1Score.setText(totalScore1);
+//				break;
+//			case 2:
+//				Bundle bundle2 = data.getExtras();
+//				String totalScore2 = bundle2.getString("totalScore");
+//				et2Score.setText(totalScore2);
+//				break;
+//			case 3:
+//				Bundle bundle3 = data.getExtras();
+//				String totalScore3 = bundle3.getString("totalScore");
+//				et3Score.setText(totalScore3);
+//				break;
+//			}
+			Bundle bundle = data.getExtras();
+			String totalScore = bundle.getString("totalScore");
+			EditText et = (EditText)findViewById(etArray[requestCode -1]);
+			et.setText(totalScore);
 		}
 	}
 	
@@ -409,12 +416,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		}
 	}
 	
-	private String getGameNumberFromView(int v){
-		String gameNumber = "";
+	private int getGameNumberFromView(int v){
+		int gameNumber = 0;
 			for(int i = 0; i < btnArray.length; i++){
 				if(v == btnArray[i]){
-					gameNumber = "" + (i + 1);
-					Log.v("GameNumber", gameNumber);
+					gameNumber =  i + 1;
+					Log.v("GameNumber", "" + gameNumber);
 				}
 			}
 		return gameNumber;

@@ -77,6 +77,10 @@ public class BowlerDatabaseAdapter {
 		 											"f9b1pins", "f9b2pins", "f9b2ball", 
 		 											"f10b1pins", "f10b2pins", "f10b2ball", 
 		 											"f10b3pins", "f10b3ball"};
+	private String[] blankPins = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+	private String[] blankBall = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+	private String[] blankFeet = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+	private String[] blankMark = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
 	private Context context;
 	private SQLiteDatabase database;
 	private BowlerDatabaseHelper dbHelper;
@@ -381,7 +385,7 @@ public class BowlerDatabaseAdapter {
 	
 	public long updateGame(String bowlerName, String leagueName, String date, String gameNumber, String[] pins, String[] ball, String[] mark, String[] feet, String score, int id) {
 		ContentValues values = createGameContentValues(bowlerName, leagueName, date, gameNumber, pins, ball, mark, feet, score);
-		return database.update(GAME_TABLE, values, "KEY_ROWID = " + id , null);
+		return database.update(GAME_TABLE, values, KEY_ROWID + " = " + id , null);
 	}
 	
 	public long createGameScore(String bowlerName, String leagueName, String date, String gameNumber, String score) {
@@ -391,7 +395,7 @@ public class BowlerDatabaseAdapter {
 
 	public long updateGameScore(String score, int id) {
 		ContentValues values = updateGameContentScoreValues(score);
-		return database.update(GAME_TABLE, values, "KEY_ROWID = " + id , null);
+		return database.update(GAME_TABLE, values, KEY_ROWID + " = " + id , null);
 	}
 
 	public Cursor checkGameRecords(String bowler, String league, String date, String gameNumber){
@@ -487,7 +491,12 @@ public class BowlerDatabaseAdapter {
 		values.put(KEY_DATE, date);
 		values.put(KEY_GAME_NUMBER, gameNumber);
 		values.put(KEY_SCORE, score);
-	
+		for(int i=0; i < 21; i++){
+			values.put(PINS_KEY[i], blankPins[i]);
+			values.put(BALL_KEY[i], blankBall[i]);
+			values.put(MARK_KEY[i], blankMark[i]);
+			values.put(FEET_KEY[i], blankFeet[i]);
+		}
 		return values;
 	}
 	

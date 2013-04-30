@@ -225,6 +225,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 		if(checkDataEntered()){
 			if(mDbHelper.checkGameRecords(bowler, league, date, gameNumber).getCount() > 0){
 				Cursor c = mDbHelper.checkGameRecords(bowler, league, date, gameNumber);
+				c.moveToFirst();
 				int id = c.getInt(0);
 				c.close();
 				mDbHelper.updateGame(bowler, league, date, gameNumber, scoreArray, ballArray, markArray, feetArray, totalScore.toString(), id);
@@ -248,6 +249,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 			if(checkDataEntered()){
 				if(mDbHelper.checkGameRecords(bowler, league, date, gameNumber).getCount() > 0){
 					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, gameNumber);
+					c.moveToFirst();
 					int id = c.getInt(0);
 					c.close();
 					mDbHelper.updateGame(bowler, league, date, gameNumber, scoreArray, ballArray, markArray, feetArray, totalScore.toString(), id);
@@ -339,6 +341,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 			if(checkDataEntered()){
 				if(mDbHelper.checkGameRecords(bowler, league, date, gameNumber).getCount() > 0){
 					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, gameNumber);
+					c.moveToFirst();
 					int id = c.getInt(0);
 					c.close();
 					mDbHelper.updateGame(bowler, league, date, gameNumber, scoreArray, ballArray, markArray, feetArray, totalScore.toString(), id);
@@ -351,6 +354,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 			if(checkDataEntered()){
 				if(mDbHelper.checkGameRecords(bowler, league, date, gameNumber).getCount() > 0){
 					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, gameNumber);
+					c.moveToFirst();
 					int id = c.getInt(0);
 					c.close();
 					mDbHelper.updateGame(bowler, league, date, gameNumber, scoreArray, ballArray, markArray, feetArray, totalScore.toString(), id);
