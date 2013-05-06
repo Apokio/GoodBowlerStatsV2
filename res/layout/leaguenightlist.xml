@@ -26,28 +26,14 @@
   	android:textSize="16dip"
   />
   <TextView
-  	android:id="@+id/g1_entry"
+  	android:id="@+id/game_number_entry"
   	android:layout_width="wrap_content"
   	android:layout_height="wrap_content"
   	android:textColor="#ffffff"
   	android:textSize="16dip"
   />
   <TextView
-  	android:id="@+id/g2_entry"
-  	android:layout_width="wrap_content"
-  	android:layout_height="wrap_content"
-  	android:textColor="#ffffff"
-  	android:textSize="16dip"
-  />
-  <TextView
-  	android:id="@+id/g3_entry"
-  	android:layout_width="wrap_content"
-  	android:layout_height="wrap_content"
-  	android:textColor="#ffffff"
-  	android:textSize="16dip"
-  />
-  <TextView
-  	android:id="@+id/series_entry"
+  	android:id="@+id/score_entry"
   	android:layout_width="wrap_content"
   	android:layout_height="wrap_content"
   	android:textColor="#ffffff"

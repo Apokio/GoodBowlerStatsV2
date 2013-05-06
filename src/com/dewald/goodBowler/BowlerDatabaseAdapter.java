@@ -198,13 +198,12 @@ public class BowlerDatabaseAdapter {
 				KEY_GAME_THREE_SCORE, KEY_SERIES_SCORE }, KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +"", null, null, null, null);
 	} */
 	
-	//////not used in version 2.0 must rewrite to write to the game table only
-	/*public Cursor fetchScoresForBowlerLeague(String bowler, String league) {
+	public Cursor fetchScoresForBowlerLeague(String bowler, String league) {
 		Log.e("Query", KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"");
-		return database.query(LEAGUE_NIGHT_TABLE, new String[] { KEY_ROWID, KEY_BOWLER_NAME, KEY_LEAGUE_NAME, KEY_DATE, KEY_GAME_ONE_SCORE, KEY_GAME_TWO_SCORE,
-				KEY_GAME_THREE_SCORE, KEY_SERIES_SCORE }, KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"", null, null, null, null);
+		return database.query(GAME_TABLE, new String[] { KEY_ROWID, KEY_BOWLER_NAME, KEY_LEAGUE_NAME, KEY_DATE, KEY_SCORE, KEY_GAME_NUMBER }, 
+				KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"", null, null, null, null);
 		
-	}*/
+	}
 	
 	 public Cursor fetchScoresForBowlerLeagueDate(String bowler, String league, String date) {
 		Log.e("Query", KEY_BOWLER_NAME + "='" + bowler +"' AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +" AND " + KEY_DATE + "='" +date+"'");
@@ -358,10 +357,10 @@ public class BowlerDatabaseAdapter {
 		return database.query(GAME_TABLE, PINS_ROW_KEY, null, null, null, null, null);
 	}
 	
-	/*
+	
 	public boolean deleteBowlerScore(long rowId) {
-		return database.delete(LEAGUE_NIGHT_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
-	}*/
+		return database.delete(GAME_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+	}
 	
 	/*
 	public boolean deleteBowlerLeagueNight(String bowler, String league, String date){

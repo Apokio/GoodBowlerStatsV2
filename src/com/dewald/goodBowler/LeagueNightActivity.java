@@ -46,7 +46,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	private Integer series = 0;
 	
 	//variables for the add and remove game feature to track 1 - 20 games per date, league, bowler
-	private int gameCount = 0; //this starts at zero index to match arrays
+	private int gameCount = 1; //this starts at zero index to match arrays
 	private int btnArray[] = {R.id.btnGame1, R.id.btnGame2, R.id.btnGame3, R.id.btnGame4, R.id.btnGame5, R.id.btnGame6, R.id.btnGame7, R.id.btnGame8, R.id.btnGame9, R.id.btnGame10,
 				R.id.btnGame11, R.id.btnGame12, R.id.btnGame13, R.id.btnGame14, R.id.btnGame15, R.id.btnGame16, R.id.btnGame17, R.id.btnGame18, R.id.btnGame19, R.id.btnGame20};
 	private int etArray[] = {R.id.etGame1, R.id.etGame2, R.id.etGame3, R.id.etGame4, R.id.etGame5, R.id.etGame6, R.id.etGame7, R.id.etGame8, R.id.etGame9, R.id.etGame10,
@@ -106,14 +106,16 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	@Override
 	public void onStop(){
 		super.onStop();
+		updateScoreArray();
 		for(int i = 0; i < gameCount; i++){
-			if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
-				Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++);
+			if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+				Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+				c.moveToFirst();
 				int id = c.getInt(0);
 				c.close();
 				mDbHelper.updateGameScore("" + scoreArray[i], id);
 			}else{
-			mDbHelper.createGameScore(bowler, league, sqlDate, "" + i++, "" + scoreArray[i]);
+			mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
 			}
 		}
 	} 
@@ -126,17 +128,18 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	
 	@Override
 	public void finish(){
-		String date = sqlDate;
+			updateScoreArray();
 			if(verifyScores()){
 			//check to see database entry already exists and delete it so multiple records do not exist
 			for(int i = 0; i < gameCount; i++){
-				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
-					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, "" + i++);
+				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+					Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+					c.moveToFirst();
 					int id = c.getInt(0);
 					c.close();
 					mDbHelper.updateGameScore("" + scoreArray[i], id);
 				}else{
-				mDbHelper.createGameScore(bowler, league, date, "" + i++, "" + scoreArray[i]);
+				mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
 				}
 			}
 			super.finish();
@@ -183,6 +186,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			numGames = 3;
 		}
 		loadGames(numGames);
+		Log.v("GameCountgetGames", "" + numGames);
 	}
 	
 	//this loads the games in the layout the first game input is added in the layout and the rest are set by what is in the database
@@ -192,7 +196,6 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		LinearLayout parent = llTop;
 		
 		for(int i = 1; i < numOfGames; i++){
-			gameCount++;
 			TextView  tv = new TextView(this);
 			tv.setText("Enter Game " + (gameCount + 1) + " Score");
 			tv.setTextAppearance(this, R.style.MediumText);
@@ -203,12 +206,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			LinearLayout ll = (LinearLayout)gameView.findViewById(R.id.ll);
 			et.setId(etArray[gameCount]);
 			et.addTextChangedListener(this);
-			//et.setText("0");
 			btn.setId(btnArray[gameCount]);
 			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
 			tv.setId(tvArray[gameCount]);
 			parent.addView(gameView);
+			gameCount++;
 		}
 		Cursor c = mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate);
 		if(c.getCount() > 0){
@@ -224,11 +227,10 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	
 	//this adds the game after the add game button is pressed
 	private void addGame(){
-		if(gameCount == 19){
+		if(gameCount == 20){
 			Toast t = Toast.makeText(this, "Cannot add more than 20 Games", Toast.LENGTH_LONG);
 			t.show();
 		}else{
-			gameCount++;
 			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			TextView  tv = new TextView(this);
 			tv.setText("Enter Game " + (gameCount + 1) + " Score");
@@ -241,26 +243,26 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			tv.setId(tvArray[gameCount]);
 			et.setId(etArray[gameCount]);
 			et.addTextChangedListener(this);
-			//et.setText("0");
 			btn.setId(btnArray[gameCount]);
 			btn.setOnClickListener(this);
 			ll.setId(llArray[gameCount]);
 			llTop.addView(gameView);
+			gameCount++;
 			Log.v("GameCount", "" + gameCount);
 		}
 	}
 	
 	//this removes the game after the remove button is pressed
 	private void removeGame(){
-		if(gameCount == 0){
+		if(gameCount == 1){
 			Toast t = Toast.makeText(this, "Cannot have less than 1 Game", Toast.LENGTH_LONG);
 			t.show();
 		}else{
+			gameCount--;
 			llTop.removeView(llTop.findViewById(tvArray[gameCount]));
 			llTop.removeView(llTop.findViewById(etArray[gameCount]));
 			llTop.removeView(llTop.findViewById(btnArray[gameCount]));
 			llTop.removeView(llTop.findViewById(llArray[gameCount]));
-			gameCount--;
 		}
 	}
 	@Override
@@ -268,17 +270,18 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 		int viewId = v.getId();
 		switch(v.getId()) {
 		case R.id.acceptButton:
-			String date = sqlDate;
+			updateScoreArray();
 			if(verifyScores()){
 			//check to see database entry already exists and delete it so multiple records do not exist
 			for(int i = 0; i < gameCount; i++){
-				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + i++).getCount() > 0){
-					Cursor c = mDbHelper.checkGameRecords(bowler, league, date, "" + i++);
+				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+					Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+					c.moveToFirst();
 					int id = c.getInt(0);
 					c.close();
 					mDbHelper.updateGameScore("" + scoreArray[i], id);
 				}else{
-				mDbHelper.createGameScore(bowler, league, date, "" + i++, "" + scoreArray[i]);
+				mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
 				}
 			}
 			super.finish();
@@ -335,7 +338,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	@Override
 	public void afterTextChanged(Editable s) {
 		try{
-			for(int i = 0; i < gameCount + 1; i++){
+			for(int i = 0; i < gameCount; i++){
 				EditText et = (EditText)findViewById(etArray[i]);
 				if(!et.getText().toString().equals("")){
 					scoreArray[i] = Integer.parseInt(et.getText().toString());
@@ -348,7 +351,6 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			t.show();	
 		}
 		calculateSeries();
-		
 		
 	}
 
@@ -436,5 +438,12 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 				}
 			}
 		return valid;
+	}
+	
+	private void updateScoreArray(){
+		for(int i = 0; i < gameCount; i++){
+			EditText et = (EditText)findViewById(etArray[i]);
+			scoreArray[i] = Integer.parseInt(et.getText().toString());
+		}
 	}
 }

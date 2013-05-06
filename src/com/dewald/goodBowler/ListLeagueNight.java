@@ -38,7 +38,7 @@ public class ListLeagueNight extends ListActivity implements OnItemClickListener
 		dbHelper.open();
 		lv = getListView();
 		lv.setOnItemClickListener(this);
-		//fillData(); TODO
+		fillData();
 	}
 	
 	@Override
@@ -47,22 +47,15 @@ public class ListLeagueNight extends ListActivity implements OnItemClickListener
 		cursor.close();
 		dbHelper.close();
 	}
-
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		// TODO remove later when we uncomment the other code ion this class
-		
-	}
 	
 	//TODO fix this when we add the option to add more than three game
-	/* private void fillData() {
+	 private void fillData() {
 		cursor = dbHelper.fetchScoresForBowlerLeague(bowler, league);
 		startManagingCursor(cursor);
 		
 		String[] from = new String[] { BowlerDatabaseAdapter.KEY_BOWLER_NAME, BowlerDatabaseAdapter.KEY_LEAGUE_NAME, BowlerDatabaseAdapter.KEY_DATE, 
-									   BowlerDatabaseAdapter.KEY_GAME_ONE_SCORE, BowlerDatabaseAdapter.KEY_GAME_TWO_SCORE, BowlerDatabaseAdapter.KEY_GAME_THREE_SCORE,
-									   BowlerDatabaseAdapter.KEY_SERIES_SCORE};
-		int[] to = new int [] { R.id.bowler_entry, R.id.league_entry, R.id.date_entry, R.id.g1_entry, R.id.g2_entry, R.id.g3_entry, R.id.series_entry};
+									   BowlerDatabaseAdapter.KEY_SCORE, BowlerDatabaseAdapter.KEY_GAME_NUMBER};
+		int[] to = new int [] { R.id.bowler_entry, R.id.league_entry, R.id.date_entry, R.id.score_entry, R.id.game_number_entry};
 		
 		SimpleCursorAdapter leagues = new SimpleCursorAdapter(this, R.layout.leaguenightlist, cursor, from, to);
 		this.setListAdapter(leagues);
@@ -99,6 +92,6 @@ public class ListLeagueNight extends ListActivity implements OnItemClickListener
 		});
 		
 		alert.show();
-	} */
+	}
 
 }
