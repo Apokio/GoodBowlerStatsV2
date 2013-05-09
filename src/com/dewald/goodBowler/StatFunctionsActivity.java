@@ -250,22 +250,22 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 	}
 	
 	private XYMultipleSeriesDataset listGamesDataset() {
-	    XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
-	    Cursor cursor = dbHelper.fetchListGamesData(bowler, sqlDate1, sqlDate2);
-		for(int i = 0; i < 10; i++){
-			cursor.moveToFirst();
-			TimeSeries series = new TimeSeries("Game " + cursor.getString(2));
-			for(int r = 0; r < cursor.getCount(); r++){
-				if (cursor.getInt(2) == i + 1){
-				series.add(createDate(cursor.getString(1)), cursor.getDouble(0));
-				}
-				cursor.moveToNext();
+		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+		Cursor cursor = dbHelper.fetchListGamesData(bowler, sqlDate1, sqlDate2);
+			for(int i = 0; i < 20; i++){
+				TimeSeries series = new TimeSeries("Game " + (i + 1));
+					cursor.moveToFirst();
+					for(int r = 0; r < cursor.getCount(); r++){
+						if (cursor.getInt(2) == i + 1){
+							series.add(createDate(cursor.getString(1)), cursor.getDouble(0));
+						}
+						cursor.moveToNext();
+					}
+					dataset.addSeries(series);
 			}
-	    dataset.addSeries(series);
-		}
-		cursor.close();
-	    return dataset;
-	  }
+			cursor.close();
+			return dataset;
+	}
 	
 	private XYMultipleSeriesRenderer listGamesRenderer() {
 	    XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();
@@ -298,6 +298,87 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 	    r = new XYSeriesRenderer();
 	    r.setPointStyle(PointStyle.DIAMOND);
 	    r.setColor(Color.RED);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.TRIANGLE);
+	    r.setColor(Color.YELLOW);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r.setColor(Color.BLUE);
+	    r.setPointStyle(PointStyle.SQUARE);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.CIRCLE);
+	    r.setColor(Color.GREEN);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.DIAMOND);
+	    r.setColor(Color.RED);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.TRIANGLE);
+	    r.setColor(Color.YELLOW);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r.setColor(Color.BLUE);
+	    r.setPointStyle(PointStyle.SQUARE);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.CIRCLE);
+	    r.setColor(Color.GREEN);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.DIAMOND);
+	    r.setColor(Color.RED);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.TRIANGLE);
+	    r.setColor(Color.YELLOW);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r.setColor(Color.BLUE);
+	    r.setPointStyle(PointStyle.SQUARE);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.CIRCLE);
+	    r.setColor(Color.GREEN);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.DIAMOND);
+	    r.setColor(Color.RED);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.TRIANGLE);
+	    r.setColor(Color.YELLOW);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r.setColor(Color.BLUE);
+	    r.setPointStyle(PointStyle.SQUARE);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.CIRCLE);
+	    r.setColor(Color.GREEN);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.DIAMOND);
+	    r.setColor(Color.RED);
+	    r.setFillPoints(true);
+	    renderer.addSeriesRenderer(r);
+	    r = new XYSeriesRenderer();
+	    r.setPointStyle(PointStyle.TRIANGLE);
+	    r.setColor(Color.YELLOW);
 	    r.setFillPoints(true);
 	    renderer.addSeriesRenderer(r);
 	    renderer.setAxesColor(Color.DKGRAY);

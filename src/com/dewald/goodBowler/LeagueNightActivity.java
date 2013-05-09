@@ -107,15 +107,18 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	public void onStop(){
 		super.onStop();
 		updateScoreArray();
+		//check to see database entry already exists and delete it so multiple records do not exist
 		for(int i = 0; i < gameCount; i++){
-			if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
-				Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
-				c.moveToFirst();
-				int id = c.getInt(0);
-				c.close();
-				mDbHelper.updateGameScore("" + scoreArray[i], id);
-			}else{
-			mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+			if(scoreArray[i] > 0){
+				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+					Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+					c.moveToFirst();
+					int id = c.getInt(0);
+					c.close();
+					mDbHelper.updateGameScore("" + scoreArray[i], id);
+				}else{
+					mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+				}
 			}
 		}
 	} 
@@ -132,21 +135,23 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			if(verifyScores()){
 			//check to see database entry already exists and delete it so multiple records do not exist
 			for(int i = 0; i < gameCount; i++){
-				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
-					Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
-					c.moveToFirst();
-					int id = c.getInt(0);
-					c.close();
-					mDbHelper.updateGameScore("" + scoreArray[i], id);
-				}else{
-				mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+				if(scoreArray[i] > 0){
+					if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+						Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+						c.moveToFirst();
+						int id = c.getInt(0);
+						c.close();
+						mDbHelper.updateGameScore("" + scoreArray[i], id);
+					}else{
+						mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+					}
 				}
 			}
 			super.finish();
 			}else{
 				Toast t = Toast.makeText(this, "Values must be between 0 and 300", Toast.LENGTH_SHORT);
 				t.show();
-			}	
+			}
 	}
 	
 	//TODO fix this stuff
@@ -274,14 +279,16 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			if(verifyScores()){
 			//check to see database entry already exists and delete it so multiple records do not exist
 			for(int i = 0; i < gameCount; i++){
-				if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
-					Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
-					c.moveToFirst();
-					int id = c.getInt(0);
-					c.close();
-					mDbHelper.updateGameScore("" + scoreArray[i], id);
-				}else{
-				mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+				if(scoreArray[i] > 0){
+					if(mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1)).getCount() > 0){
+						Cursor c = mDbHelper.checkGameRecords(bowler, league, sqlDate, "" + (i + 1));
+						c.moveToFirst();
+						int id = c.getInt(0);
+						c.close();
+						mDbHelper.updateGameScore("" + scoreArray[i], id);
+					}else{
+						mDbHelper.createGameScore(bowler, league, sqlDate, "" + (i+1), "" + scoreArray[i]);
+					}
 				}
 			}
 			super.finish();

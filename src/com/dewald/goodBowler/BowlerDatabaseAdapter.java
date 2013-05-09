@@ -234,19 +234,16 @@ public class BowlerDatabaseAdapter {
 	
 	//fetches data for the listGames Graphing function
 	public Cursor fetchListGamesData(String bowler, String date1, String date2){
-		Log.v("ListScoresQuesry", KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_DATE + " BETWEEN '" + date1 + "' AND '" + date2 +"'");
+		//Log.v("ListScoresQuery", KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_DATE + " BETWEEN '" + date1 + "' AND '" + date2 +"'");
 		return database.query(GAME_TABLE, new String[] {KEY_SCORE, KEY_DATE, KEY_GAME_NUMBER},
 				KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_DATE + " BETWEEN '" + date1 + "' AND '" + date2 +"'", 
-				null, null, null, KEY_DATE);
+				null, null, null, null);
 	}
 	
 	//fetches data for the listSeries Graphing function
 	//must fix the league night table reference
 	public Cursor fetchListSeriesData(String bowler, String date1, String date2){
-		return database.rawQuery("SELECT sum(score), date FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date1 + "' GROUP BY date;", null);
-		//return database.query(LEAGUE_NIGHT_TABLE, new String[] {KEY_SERIES_SCORE, KEY_DATE},
-				//KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_DATE + " BETWEEN '" + date1 + "' AND '" + date2 +"'", 
-				//null, null, null, KEY_DATE);
+		return database.rawQuery("SELECT sum(score), date FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date1 + "' GROUP BY date AND leaguename;", null);
 	}
 	
 	//fetches data for the strikeSpare Graphing function
