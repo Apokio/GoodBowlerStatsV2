@@ -243,7 +243,8 @@ public class BowlerDatabaseAdapter {
 	//fetches data for the listSeries Graphing function
 	//must fix the league night table reference
 	public Cursor fetchListSeriesData(String bowler, String date1, String date2){
-		return database.rawQuery("SELECT sum(score), date FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date1 + "' GROUP BY date AND leaguename;", null);
+		Log.v("List Series Query","SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename;");
+		return database.rawQuery("SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename;", null);
 	}
 	
 	//fetches data for the strikeSpare Graphing function

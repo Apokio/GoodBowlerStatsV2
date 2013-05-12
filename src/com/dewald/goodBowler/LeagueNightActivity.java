@@ -448,9 +448,14 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 	}
 	
 	private void updateScoreArray(){
-		for(int i = 0; i < gameCount; i++){
-			EditText et = (EditText)findViewById(etArray[i]);
-			scoreArray[i] = Integer.parseInt(et.getText().toString());
+		try{
+			for(int i = 0; i < gameCount; i++){
+				EditText et = (EditText)findViewById(etArray[i]);
+				scoreArray[i] = Integer.parseInt(et.getText().toString());
+			}
+		}catch(NumberFormatException nfe){
+			Toast t = Toast.makeText(this, "Values must be a number", Toast.LENGTH_SHORT);
+			t.show();	
 		}
 	}
 }

@@ -3,6 +3,7 @@ package com.dewald.goodBowler;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -83,9 +84,9 @@ public class BowlerDatabaseHelper extends SQLiteOpenHelper {
 			String score1 = cursor.getString(4);
 			String score2 = cursor.getString(5);
 			String score3 = cursor.getString(6);
-			database.update("game", createGame(score1), "bowlername = '" + bowler + "' AND leaguename = '" + league + "' AND date = '" + date + "' AND gamenumber = '1'", null);
-			database.update("game", createGame(score2), "bowlername = '" + bowler + "' AND leaguename = '" + league + "' AND date = '" + date + "' AND gamenumber = '2'", null);
-			database.update("game", createGame(score3), "bowlername = '" + bowler + "' AND leaguename = '" + league + "' AND date = '" + date + "' AND gamenumber = '3'", null);
+			database.update("game", createGame(score1), "bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND leaguename = " + DatabaseUtils.sqlEscapeString(league) + " AND date = '" + date + "' AND gamenumber = '1'", null);
+			database.update("game", createGame(score2), "bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND leaguename = " + DatabaseUtils.sqlEscapeString(league) + " AND date = '" + date + "' AND gamenumber = '2'", null);
+			database.update("game", createGame(score3), "bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND leaguename = " + DatabaseUtils.sqlEscapeString(league) + " AND date = '" + date + "' AND gamenumber = '3'", null);
 			cursor.moveToNext();
 		}
 		//drop league night table
