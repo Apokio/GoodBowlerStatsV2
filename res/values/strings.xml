@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, NewBowler!</string>
     <string name="app_name">Good Bowler Stats</string>
     <string name="name">Bowler Name</string>
     <string name="average">Enter Average</string>
