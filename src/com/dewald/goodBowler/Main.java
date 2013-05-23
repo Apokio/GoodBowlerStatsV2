@@ -311,7 +311,7 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		for(int i = 0; i < cursor.getCount(); i++){
 			if(!checkDataEntered(i)){
 				boolean delete = dbHelper.deleteGameKey(cursor.getLong(0));
-				Log.v("Deleted", cursor.getString(0) + delete);
+				//Log.v("Deleted", cursor.getString(0) + delete);
 			}
 			cursor.moveToNext();
 		}
@@ -382,7 +382,7 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		 Cursor cursor = dbHelper.fetchLeaguesForBowler(bowler);
 		 cursor.moveToFirst();
 		 for(int i = 0; i < cursor.getCount(); i++){
-			 Log.v("League Name", cursor.getString(1));
+			 //Log.v("League Name", cursor.getString(1));
 			 if(cursor.getString(1).equals("Open Bowling")){
 				 openExists = true;
 			 }

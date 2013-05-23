@@ -55,11 +55,11 @@ public class BallStats extends Activity{
 		sqlDate1 = extras.getString("sqlDate1");
 		sqlDate2 = extras.getString("sqlDate2");
 		ball = extras.getString("ball");
-		Log.v("bowler", bowler);
-		Log.v("league", league);
-		Log.v("sqlDate1", sqlDate1);
-		Log.v("sqlDate2", sqlDate2);
-		Log.v("ball", ball);
+		//Log.v("bowler", bowler);
+		//Log.v("league", league);
+		//Log.v("sqlDate1", sqlDate1);
+		//Log.v("sqlDate2", sqlDate2);
+		//Log.v("ball", ball);
 		
 		bowlerLeagueBallName = (TextView)findViewById(R.id.bowlerLeagueBallName);
 		bowlerLeagueBallName.setText(bowler + "'s " + ball + " Stats for " + league);

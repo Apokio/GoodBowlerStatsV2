@@ -68,7 +68,7 @@ public class BowlerDatabaseHelper extends SQLiteOpenHelper {
 	//Method used to update the version of the database
 	public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
 		Cursor cursor;
-		Log.w(BowlerDatabaseHelper.class.getName(), "Upgrading database from version " + oldVersion + " to " + newVersion + "!!!!!!");
+		//Log.w(BowlerDatabaseHelper.class.getName(), "Upgrading database from version " + oldVersion + " to " + newVersion + "!!!!!!");
 		//Version 2.0 database upgrades
 		//alter game table to add score row
 		database.execSQL("ALTER TABLE game ADD COLUMN score INTEGER '0'");

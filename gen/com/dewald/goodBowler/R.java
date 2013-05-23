@@ -9,299 +9,898 @@ package com.dewald.goodBowler;
 
 public final class R {
     public static final class array {
-        public static final int frames_array=0x7f060000;
+        public static final int frames_array=0x7f090000;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int confirm_logout=0x7f01000c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int done_button_background=0x7f010006;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int done_button_text=0x7f010004;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int extra_fields=0x7f010001;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fetch_user_info=0x7f01000d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int is_cropped=0x7f010011;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int login_text=0x7f01000e;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int logout_text=0x7f01000f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int multi_select=0x7f010007;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>small</code></td><td>-2</td><td> Keep in sync with constants in ProfilePictureView </td></tr>
+<tr><td><code>normal</code></td><td>-3</td><td></td></tr>
+<tr><td><code>large</code></td><td>-4</td><td></td></tr>
+</table>
+         */
+        public static final int preset_size=0x7f010010;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radius_in_meters=0x7f010008;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int results_limit=0x7f010009;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int search_text=0x7f01000a;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int show_pictures=0x7f010000;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int show_search_box=0x7f01000b;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int show_title_bar=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int title_bar_background=0x7f010005;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int title_text=0x7f010003;
+    }
+    public static final class color {
+        public static final int com_facebook_blue=0x7f060000;
+        public static final int com_facebook_loginview_text_color=0x7f060004;
+        public static final int com_facebook_usersettingsfragment_connected_shadow_color=0x7f060002;
+        public static final int com_facebook_usersettingsfragment_connected_text_color=0x7f060001;
+        public static final int com_facebook_usersettingsfragment_not_connected_text_color=0x7f060003;
+    }
+    public static final class dimen {
+        public static final int com_facebook_loginview_height=0x7f070007;
+        public static final int com_facebook_loginview_padding_bottom=0x7f070005;
+        public static final int com_facebook_loginview_padding_left=0x7f070002;
+        public static final int com_facebook_loginview_padding_right=0x7f070003;
+        public static final int com_facebook_loginview_padding_top=0x7f070004;
+        public static final int com_facebook_loginview_text_size=0x7f070008;
+        public static final int com_facebook_loginview_width=0x7f070006;
+        public static final int com_facebook_profilepictureview_preset_size_large=0x7f07000b;
+        public static final int com_facebook_profilepictureview_preset_size_normal=0x7f07000a;
+        public static final int com_facebook_profilepictureview_preset_size_small=0x7f070009;
+        public static final int com_facebook_usersettingsfragment_profile_picture_height=0x7f070001;
+        public static final int com_facebook_usersettingsfragment_profile_picture_width=0x7f070000;
     }
     public static final class drawable {
         public static final int arrows=0x7f020000;
         public static final int background=0x7f020001;
         public static final int blank=0x7f020002;
         public static final int checkbox_selector=0x7f020003;
-        public static final int feet=0x7f020004;
-        public static final int frame_button=0x7f020005;
-        public static final int ic_about=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_help=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int icon=0x7f02000a;
-        public static final int panel_picture_frame_bg_focus_blue=0x7f02000b;
-        public static final int panel_picture_frame_bg_normal=0x7f02000c;
-        public static final int panel_picture_frame_bg_pressed_blue=0x7f02000d;
-        public static final int pin=0x7f02000e;
-        public static final int pinx=0x7f02000f;
-        public static final int scoreblock=0x7f020010;
-        public static final int titletext=0x7f020011;
+        public static final int com_facebook_button_check=0x7f020004;
+        public static final int com_facebook_button_check_off=0x7f020005;
+        public static final int com_facebook_button_check_on=0x7f020006;
+        public static final int com_facebook_button_grey_focused=0x7f020007;
+        public static final int com_facebook_button_grey_normal=0x7f020008;
+        public static final int com_facebook_button_grey_pressed=0x7f020009;
+        public static final int com_facebook_close=0x7f02000a;
+        public static final int com_facebook_icon=0x7f02000b;
+        public static final int com_facebook_list_divider=0x7f02000c;
+        public static final int com_facebook_list_section_header_background=0x7f02000d;
+        public static final int com_facebook_loginbutton_blue=0x7f02000e;
+        public static final int com_facebook_loginbutton_blue_focused=0x7f02000f;
+        public static final int com_facebook_loginbutton_blue_normal=0x7f020010;
+        public static final int com_facebook_loginbutton_blue_pressed=0x7f020011;
+        public static final int com_facebook_loginbutton_silver=0x7f020012;
+        public static final int com_facebook_logo=0x7f020013;
+        public static final int com_facebook_picker_item_background=0x7f020014;
+        public static final int com_facebook_picker_list_focused=0x7f020015;
+        public static final int com_facebook_picker_list_longpressed=0x7f020016;
+        public static final int com_facebook_picker_list_pressed=0x7f020017;
+        public static final int com_facebook_picker_list_selector=0x7f020018;
+        public static final int com_facebook_picker_list_selector_background_transition=0x7f020019;
+        public static final int com_facebook_picker_list_selector_disabled=0x7f02001a;
+        public static final int com_facebook_picker_top_button=0x7f02001b;
+        public static final int com_facebook_place_default_icon=0x7f02001c;
+        public static final int com_facebook_profile_default_icon=0x7f02001d;
+        public static final int com_facebook_profile_picture_blank_portrait=0x7f02001e;
+        public static final int com_facebook_profile_picture_blank_square=0x7f02001f;
+        public static final int com_facebook_top_background=0x7f020020;
+        public static final int com_facebook_top_button=0x7f020021;
+        public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020022;
+        public static final int feet=0x7f020023;
+        public static final int frame_button=0x7f020024;
+        public static final int ic_about=0x7f020025;
+        public static final int ic_action_search=0x7f020026;
+        public static final int ic_help=0x7f020027;
+        public static final int ic_launcher=0x7f020028;
+        public static final int icon=0x7f020029;
+        public static final int panel_picture_frame_bg_focus_blue=0x7f02002a;
+        public static final int panel_picture_frame_bg_normal=0x7f02002b;
+        public static final int panel_picture_frame_bg_pressed_blue=0x7f02002c;
+        public static final int pin=0x7f02002d;
+        public static final int pinx=0x7f02002e;
+        public static final int scoreblock=0x7f02002f;
+        public static final int titletext=0x7f020030;
     }
     public static final class id {
-        public static final int FinalButton=0x7f0400ad;
-        public static final int about=0x7f0400c1;
-        public static final int accept=0x7f040082;
-        public static final int acceptButton=0x7f04006c;
-        public static final int addButton=0x7f04006a;
-        public static final int allDates=0x7f0400be;
-        public static final int average=0x7f040086;
-        public static final int average_entry=0x7f04005f;
-        public static final int ball1=0x7f0400a4;
-        public static final int ball2=0x7f0400a5;
-        public static final int ball3=0x7f0400a6;
-        public static final int ballName=0x7f040081;
-        public static final int ballSpinner=0x7f0400a7;
-        public static final int ballStatsButton=0x7f0400c0;
-        public static final int ball_entry=0x7f040075;
-        public static final int bowlerLeagueBallName=0x7f040050;
-        public static final int bowlerLeagueName=0x7f0400b6;
-        public static final int bowlerName=0x7f040085;
-        public static final int bowlerSpinner=0x7f040077;
-        public static final int bowler_entry=0x7f040063;
-        public static final int btn=0x7f040070;
-        public static final int btnGame1=0x7f040014;
-        public static final int btnGame10=0x7f04001d;
-        public static final int btnGame11=0x7f04001e;
-        public static final int btnGame12=0x7f04001f;
-        public static final int btnGame13=0x7f040020;
-        public static final int btnGame14=0x7f040021;
-        public static final int btnGame15=0x7f040022;
-        public static final int btnGame16=0x7f040023;
-        public static final int btnGame17=0x7f040024;
-        public static final int btnGame18=0x7f040025;
-        public static final int btnGame19=0x7f040026;
-        public static final int btnGame2=0x7f040015;
-        public static final int btnGame20=0x7f040027;
-        public static final int btnGame3=0x7f040016;
-        public static final int btnGame4=0x7f040017;
-        public static final int btnGame5=0x7f040018;
-        public static final int btnGame6=0x7f040019;
-        public static final int btnGame7=0x7f04001a;
-        public static final int btnGame8=0x7f04001b;
-        public static final int btnGame9=0x7f04001c;
-        public static final int cancel=0x7f040083;
-        public static final int cancelButton=0x7f040087;
-        public static final int dateButton=0x7f04007a;
-        public static final int dateButton1=0x7f0400af;
-        public static final int dateButton2=0x7f0400b1;
-        public static final int dateRange=0x7f040051;
-        public static final int dateTV=0x7f040066;
-        public static final int date_entry=0x7f040072;
-        public static final int et=0x7f04006f;
-        public static final int etGame1=0x7f040000;
-        public static final int etGame10=0x7f040009;
-        public static final int etGame11=0x7f04000a;
-        public static final int etGame12=0x7f04000b;
-        public static final int etGame13=0x7f04000c;
-        public static final int etGame14=0x7f04000d;
-        public static final int etGame15=0x7f04000e;
-        public static final int etGame16=0x7f04000f;
-        public static final int etGame17=0x7f040010;
-        public static final int etGame18=0x7f040011;
-        public static final int etGame19=0x7f040012;
-        public static final int etGame2=0x7f040001;
-        public static final int etGame20=0x7f040013;
-        public static final int etGame3=0x7f040002;
-        public static final int etGame4=0x7f040003;
-        public static final int etGame5=0x7f040004;
-        public static final int etGame6=0x7f040005;
-        public static final int etGame7=0x7f040006;
-        public static final int etGame8=0x7f040007;
-        public static final int etGame9=0x7f040008;
-        public static final int exportdata=0x7f0400c4;
-        public static final int feetSeekBar=0x7f0400ab;
-        public static final int feetTV=0x7f0400aa;
-        public static final int frame10button=0x7f040094;
-        public static final int frame1button=0x7f04008b;
-        public static final int frame2button=0x7f04008c;
-        public static final int frame3button=0x7f04008d;
-        public static final int frame4button=0x7f04008e;
-        public static final int frame5button=0x7f04008f;
-        public static final int frame6button=0x7f040090;
-        public static final int frame7button=0x7f040091;
-        public static final int frame8button=0x7f040092;
-        public static final int frame9button=0x7f040093;
-        public static final int frameSpinner=0x7f0400a3;
-        public static final int gameTV=0x7f040067;
-        public static final int game_number_entry=0x7f040073;
-        public static final int graphicalStatButton=0x7f04007d;
-        public static final int help=0x7f0400c2;
-        public static final int helpView=0x7f040060;
-        public static final int house=0x7f040089;
-        public static final int house_entry=0x7f040062;
-        public static final int imageView1=0x7f040076;
-        public static final int importdata=0x7f0400c3;
-        public static final int leagueCheckBox=0x7f0400bc;
-        public static final int leagueName=0x7f040088;
-        public static final int leagueSpinner=0x7f040078;
-        public static final int leagueTV=0x7f040065;
-        public static final int league_entry=0x7f040071;
-        public static final int leaguename_entry=0x7f040061;
-        public static final int list=0x7f04008a;
-        public static final int listBallsButton=0x7f040084;
-        public static final int listButton=0x7f04006d;
-        public static final int listGames=0x7f0400b2;
-        public static final int listScores=0x7f0400b3;
-        public static final int ll=0x7f04006e;
-        public static final int ll1=0x7f04003c;
-        public static final int ll10=0x7f040045;
-        public static final int ll11=0x7f040046;
-        public static final int ll12=0x7f040047;
-        public static final int ll13=0x7f040048;
-        public static final int ll14=0x7f040049;
-        public static final int ll15=0x7f04004a;
-        public static final int ll16=0x7f04004b;
-        public static final int ll17=0x7f04004c;
-        public static final int ll18=0x7f04004d;
-        public static final int ll19=0x7f04004e;
-        public static final int ll2=0x7f04003d;
-        public static final int ll20=0x7f04004f;
-        public static final int ll3=0x7f04003e;
-        public static final int ll4=0x7f04003f;
-        public static final int ll5=0x7f040040;
-        public static final int ll6=0x7f040041;
-        public static final int ll7=0x7f040042;
-        public static final int ll8=0x7f040043;
-        public static final int ll9=0x7f040044;
-        public static final int llTop=0x7f040068;
-        public static final int markSeekBar=0x7f0400a9;
-        public static final int markTV=0x7f0400a8;
-        public static final int nameTV=0x7f040064;
-        public static final int name_entry=0x7f04005e;
-        public static final int newBallButton=0x7f040080;
-        public static final int newBowlerButton=0x7f04007e;
-        public static final int newLeagueButton=0x7f04007f;
-        public static final int pin1=0x7f04009f;
-        public static final int pin10=0x7f040099;
-        public static final int pin2=0x7f04009d;
-        public static final int pin3=0x7f04009e;
-        public static final int pin4=0x7f04009a;
-        public static final int pin5=0x7f04009b;
-        public static final int pin6=0x7f04009c;
-        public static final int pin7=0x7f040096;
-        public static final int pin8=0x7f040097;
-        public static final int pin9=0x7f040098;
-        public static final int removeButton=0x7f04006b;
-        public static final int resetButton=0x7f0400ac;
-        public static final int resetFrame=0x7f0400a1;
-        public static final int scoreButton=0x7f04007b;
-        public static final int scoreTV=0x7f040095;
-        public static final int score_entry=0x7f040074;
-        public static final int series=0x7f040069;
-        public static final int singleDate=0x7f0400bd;
-        public static final int spareButton=0x7f0400a2;
-        public static final int sparesByPin=0x7f0400b5;
-        public static final int statButton=0x7f04007c;
-        public static final int statsButton=0x7f0400bf;
-        public static final int strikeButton=0x7f0400a0;
-        public static final int strikeSpares=0x7f0400b4;
-        public static final int tableAverage=0x7f0400b7;
-        public static final int tableHighGame=0x7f0400b9;
-        public static final int tableHighSeries=0x7f0400ba;
-        public static final int tableMultiPinChances=0x7f04005c;
-        public static final int tableMultiPinConversion=0x7f04005b;
-        public static final int tableMultiPinPercent=0x7f04005d;
-        public static final int tableNumSpares=0x7f040055;
-        public static final int tableNumStrikes=0x7f040052;
-        public static final int tableSinglePinChances=0x7f040059;
-        public static final int tableSinglePinConversion=0x7f040058;
-        public static final int tableSinglePinPercent=0x7f04005a;
-        public static final int tableSpareChances=0x7f040056;
-        public static final int tableSparePercent=0x7f040057;
-        public static final int tableStrikeChances=0x7f040053;
-        public static final int tableStrikePercent=0x7f040054;
-        public static final int tableStrikesRow=0x7f0400bb;
-        public static final int tableTotalGames=0x7f0400b8;
-        public static final int tvDate=0x7f040079;
-        public static final int tvDate1=0x7f0400ae;
-        public static final int tvDate2=0x7f0400b0;
-        public static final int tvGame1=0x7f040028;
-        public static final int tvGame10=0x7f040031;
-        public static final int tvGame11=0x7f040032;
-        public static final int tvGame12=0x7f040033;
-        public static final int tvGame13=0x7f040034;
-        public static final int tvGame14=0x7f040035;
-        public static final int tvGame15=0x7f040036;
-        public static final int tvGame16=0x7f040037;
-        public static final int tvGame17=0x7f040038;
-        public static final int tvGame18=0x7f040039;
-        public static final int tvGame19=0x7f04003a;
-        public static final int tvGame2=0x7f040029;
-        public static final int tvGame20=0x7f04003b;
-        public static final int tvGame3=0x7f04002a;
-        public static final int tvGame4=0x7f04002b;
-        public static final int tvGame5=0x7f04002c;
-        public static final int tvGame6=0x7f04002d;
-        public static final int tvGame7=0x7f04002e;
-        public static final int tvGame8=0x7f04002f;
-        public static final int tvGame9=0x7f040030;
+        public static final int FinalButton=0x7f0400c5;
+        public static final int about=0x7f0400d9;
+        public static final int accept=0x7f04009a;
+        public static final int acceptButton=0x7f040084;
+        public static final int addButton=0x7f040082;
+        public static final int allDates=0x7f0400d6;
+        public static final int average=0x7f04009e;
+        public static final int average_entry=0x7f040062;
+        public static final int ball1=0x7f0400bc;
+        public static final int ball2=0x7f0400bd;
+        public static final int ball3=0x7f0400be;
+        public static final int ballName=0x7f040099;
+        public static final int ballSpinner=0x7f0400bf;
+        public static final int ballStatsButton=0x7f0400d8;
+        public static final int ball_entry=0x7f04008d;
+        public static final int bowlerLeagueBallName=0x7f040053;
+        public static final int bowlerLeagueName=0x7f0400ce;
+        public static final int bowlerName=0x7f04009d;
+        public static final int bowlerSpinner=0x7f04008f;
+        public static final int bowler_entry=0x7f04007b;
+        public static final int btn=0x7f040088;
+        public static final int btnGame1=0x7f040017;
+        public static final int btnGame10=0x7f040020;
+        public static final int btnGame11=0x7f040021;
+        public static final int btnGame12=0x7f040022;
+        public static final int btnGame13=0x7f040023;
+        public static final int btnGame14=0x7f040024;
+        public static final int btnGame15=0x7f040025;
+        public static final int btnGame16=0x7f040026;
+        public static final int btnGame17=0x7f040027;
+        public static final int btnGame18=0x7f040028;
+        public static final int btnGame19=0x7f040029;
+        public static final int btnGame2=0x7f040018;
+        public static final int btnGame20=0x7f04002a;
+        public static final int btnGame3=0x7f040019;
+        public static final int btnGame4=0x7f04001a;
+        public static final int btnGame5=0x7f04001b;
+        public static final int btnGame6=0x7f04001c;
+        public static final int btnGame7=0x7f04001d;
+        public static final int btnGame8=0x7f04001e;
+        public static final int btnGame9=0x7f04001f;
+        public static final int cancel=0x7f04009b;
+        public static final int cancelButton=0x7f04009f;
+        public static final int com_facebook_login_activity_progress_bar=0x7f040065;
+        public static final int com_facebook_picker_activity_circle=0x7f040064;
+        public static final int com_facebook_picker_checkbox=0x7f040067;
+        public static final int com_facebook_picker_checkbox_stub=0x7f04006b;
+        public static final int com_facebook_picker_divider=0x7f04006f;
+        public static final int com_facebook_picker_done_button=0x7f04006e;
+        public static final int com_facebook_picker_image=0x7f040068;
+        public static final int com_facebook_picker_list_section_header=0x7f04006c;
+        public static final int com_facebook_picker_list_view=0x7f040063;
+        public static final int com_facebook_picker_profile_pic_stub=0x7f040069;
+        public static final int com_facebook_picker_row_activity_circle=0x7f040066;
+        public static final int com_facebook_picker_title=0x7f04006a;
+        public static final int com_facebook_picker_title_bar=0x7f040071;
+        public static final int com_facebook_picker_title_bar_stub=0x7f040070;
+        public static final int com_facebook_picker_top_bar=0x7f04006d;
+        public static final int com_facebook_placepickerfragment_search_box_stub=0x7f040072;
+        public static final int com_facebook_usersettingsfragment_login_button=0x7f040077;
+        public static final int com_facebook_usersettingsfragment_logo_image=0x7f040075;
+        public static final int com_facebook_usersettingsfragment_profile_name=0x7f040076;
+        public static final int dateButton=0x7f040092;
+        public static final int dateButton1=0x7f0400c7;
+        public static final int dateButton2=0x7f0400c9;
+        public static final int dateRange=0x7f040054;
+        public static final int dateTV=0x7f04007e;
+        public static final int date_entry=0x7f04008a;
+        public static final int et=0x7f040087;
+        public static final int etGame1=0x7f040003;
+        public static final int etGame10=0x7f04000c;
+        public static final int etGame11=0x7f04000d;
+        public static final int etGame12=0x7f04000e;
+        public static final int etGame13=0x7f04000f;
+        public static final int etGame14=0x7f040010;
+        public static final int etGame15=0x7f040011;
+        public static final int etGame16=0x7f040012;
+        public static final int etGame17=0x7f040013;
+        public static final int etGame18=0x7f040014;
+        public static final int etGame19=0x7f040015;
+        public static final int etGame2=0x7f040004;
+        public static final int etGame20=0x7f040016;
+        public static final int etGame3=0x7f040005;
+        public static final int etGame4=0x7f040006;
+        public static final int etGame5=0x7f040007;
+        public static final int etGame6=0x7f040008;
+        public static final int etGame7=0x7f040009;
+        public static final int etGame8=0x7f04000a;
+        public static final int etGame9=0x7f04000b;
+        public static final int exportdata=0x7f0400dc;
+        public static final int feetSeekBar=0x7f0400c3;
+        public static final int feetTV=0x7f0400c2;
+        public static final int frame10button=0x7f0400ac;
+        public static final int frame1button=0x7f0400a3;
+        public static final int frame2button=0x7f0400a4;
+        public static final int frame3button=0x7f0400a5;
+        public static final int frame4button=0x7f0400a6;
+        public static final int frame5button=0x7f0400a7;
+        public static final int frame6button=0x7f0400a8;
+        public static final int frame7button=0x7f0400a9;
+        public static final int frame8button=0x7f0400aa;
+        public static final int frame9button=0x7f0400ab;
+        public static final int frameSpinner=0x7f0400bb;
+        public static final int gameTV=0x7f04007f;
+        public static final int game_number_entry=0x7f04008b;
+        public static final int graphicalStatButton=0x7f040095;
+        public static final int help=0x7f0400da;
+        public static final int helpView=0x7f040078;
+        public static final int house=0x7f0400a1;
+        public static final int house_entry=0x7f04007a;
+        public static final int imageView1=0x7f04008e;
+        public static final int importdata=0x7f0400db;
+        public static final int large=0x7f040002;
+        public static final int leagueCheckBox=0x7f0400d4;
+        public static final int leagueName=0x7f0400a0;
+        public static final int leagueSpinner=0x7f040090;
+        public static final int leagueTV=0x7f04007d;
+        public static final int league_entry=0x7f040089;
+        public static final int leaguename_entry=0x7f040079;
+        public static final int list=0x7f0400a2;
+        public static final int listBallsButton=0x7f04009c;
+        public static final int listButton=0x7f040085;
+        public static final int listGames=0x7f0400ca;
+        public static final int listScores=0x7f0400cb;
+        public static final int ll=0x7f040086;
+        public static final int ll1=0x7f04003f;
+        public static final int ll10=0x7f040048;
+        public static final int ll11=0x7f040049;
+        public static final int ll12=0x7f04004a;
+        public static final int ll13=0x7f04004b;
+        public static final int ll14=0x7f04004c;
+        public static final int ll15=0x7f04004d;
+        public static final int ll16=0x7f04004e;
+        public static final int ll17=0x7f04004f;
+        public static final int ll18=0x7f040050;
+        public static final int ll19=0x7f040051;
+        public static final int ll2=0x7f040040;
+        public static final int ll20=0x7f040052;
+        public static final int ll3=0x7f040041;
+        public static final int ll4=0x7f040042;
+        public static final int ll5=0x7f040043;
+        public static final int ll6=0x7f040044;
+        public static final int ll7=0x7f040045;
+        public static final int ll8=0x7f040046;
+        public static final int ll9=0x7f040047;
+        public static final int llTop=0x7f040080;
+        public static final int markSeekBar=0x7f0400c1;
+        public static final int markTV=0x7f0400c0;
+        public static final int nameTV=0x7f04007c;
+        public static final int name_entry=0x7f040061;
+        public static final int newBallButton=0x7f040098;
+        public static final int newBowlerButton=0x7f040096;
+        public static final int newLeagueButton=0x7f040097;
+        public static final int normal=0x7f040001;
+        public static final int picker_subtitle=0x7f040074;
+        public static final int pin1=0x7f0400b7;
+        public static final int pin10=0x7f0400b1;
+        public static final int pin2=0x7f0400b5;
+        public static final int pin3=0x7f0400b6;
+        public static final int pin4=0x7f0400b2;
+        public static final int pin5=0x7f0400b3;
+        public static final int pin6=0x7f0400b4;
+        public static final int pin7=0x7f0400ae;
+        public static final int pin8=0x7f0400af;
+        public static final int pin9=0x7f0400b0;
+        public static final int removeButton=0x7f040083;
+        public static final int resetButton=0x7f0400c4;
+        public static final int resetFrame=0x7f0400b9;
+        public static final int scoreButton=0x7f040093;
+        public static final int scoreTV=0x7f0400ad;
+        public static final int score_entry=0x7f04008c;
+        public static final int search_box=0x7f040073;
+        public static final int series=0x7f040081;
+        public static final int singleDate=0x7f0400d5;
+        public static final int small=0x7f040000;
+        public static final int spareButton=0x7f0400ba;
+        public static final int sparesByPin=0x7f0400cd;
+        public static final int statButton=0x7f040094;
+        public static final int statsButton=0x7f0400d7;
+        public static final int strikeButton=0x7f0400b8;
+        public static final int strikeSpares=0x7f0400cc;
+        public static final int tableAverage=0x7f0400cf;
+        public static final int tableHighGame=0x7f0400d1;
+        public static final int tableHighSeries=0x7f0400d2;
+        public static final int tableMultiPinChances=0x7f04005f;
+        public static final int tableMultiPinConversion=0x7f04005e;
+        public static final int tableMultiPinPercent=0x7f040060;
+        public static final int tableNumSpares=0x7f040058;
+        public static final int tableNumStrikes=0x7f040055;
+        public static final int tableSinglePinChances=0x7f04005c;
+        public static final int tableSinglePinConversion=0x7f04005b;
+        public static final int tableSinglePinPercent=0x7f04005d;
+        public static final int tableSpareChances=0x7f040059;
+        public static final int tableSparePercent=0x7f04005a;
+        public static final int tableStrikeChances=0x7f040056;
+        public static final int tableStrikePercent=0x7f040057;
+        public static final int tableStrikesRow=0x7f0400d3;
+        public static final int tableTotalGames=0x7f0400d0;
+        public static final int tvDate=0x7f040091;
+        public static final int tvDate1=0x7f0400c6;
+        public static final int tvDate2=0x7f0400c8;
+        public static final int tvGame1=0x7f04002b;
+        public static final int tvGame10=0x7f040034;
+        public static final int tvGame11=0x7f040035;
+        public static final int tvGame12=0x7f040036;
+        public static final int tvGame13=0x7f040037;
+        public static final int tvGame14=0x7f040038;
+        public static final int tvGame15=0x7f040039;
+        public static final int tvGame16=0x7f04003a;
+        public static final int tvGame17=0x7f04003b;
+        public static final int tvGame18=0x7f04003c;
+        public static final int tvGame19=0x7f04003d;
+        public static final int tvGame2=0x7f04002c;
+        public static final int tvGame20=0x7f04003e;
+        public static final int tvGame3=0x7f04002d;
+        public static final int tvGame4=0x7f04002e;
+        public static final int tvGame5=0x7f04002f;
+        public static final int tvGame6=0x7f040030;
+        public static final int tvGame7=0x7f040031;
+        public static final int tvGame8=0x7f040032;
+        public static final int tvGame9=0x7f040033;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int balldialog=0x7f030001;
         public static final int ballstats=0x7f030002;
         public static final int bowlerlist=0x7f030003;
-        public static final int help=0x7f030004;
-        public static final int leaguelist=0x7f030005;
-        public static final int leaguenight=0x7f030006;
-        public static final int leaguenightgame=0x7f030007;
-        public static final int leaguenightlist=0x7f030008;
-        public static final int listballs=0x7f030009;
-        public static final int listview=0x7f03000a;
-        public static final int main=0x7f03000b;
-        public static final int newball=0x7f03000c;
-        public static final int newbowler=0x7f03000d;
-        public static final int newleague=0x7f03000e;
-        public static final int scorerecord=0x7f03000f;
-        public static final int spinnertext=0x7f030010;
-        public static final int statfunctions=0x7f030011;
-        public static final int stats=0x7f030012;
-        public static final int statselect=0x7f030013;
+        public static final int com_facebook_friendpickerfragment=0x7f030004;
+        public static final int com_facebook_login_activity_layout=0x7f030005;
+        public static final int com_facebook_picker_activity_circle_row=0x7f030006;
+        public static final int com_facebook_picker_checkbox=0x7f030007;
+        public static final int com_facebook_picker_image=0x7f030008;
+        public static final int com_facebook_picker_list_row=0x7f030009;
+        public static final int com_facebook_picker_list_section_header=0x7f03000a;
+        public static final int com_facebook_picker_search_box=0x7f03000b;
+        public static final int com_facebook_picker_title_bar=0x7f03000c;
+        public static final int com_facebook_picker_title_bar_stub=0x7f03000d;
+        public static final int com_facebook_placepickerfragment=0x7f03000e;
+        public static final int com_facebook_placepickerfragment_list_row=0x7f03000f;
+        public static final int com_facebook_usersettingsfragment=0x7f030010;
+        public static final int help=0x7f030011;
+        public static final int leaguelist=0x7f030012;
+        public static final int leaguenight=0x7f030013;
+        public static final int leaguenightgame=0x7f030014;
+        public static final int leaguenightlist=0x7f030015;
+        public static final int listballs=0x7f030016;
+        public static final int listview=0x7f030017;
+        public static final int main=0x7f030018;
+        public static final int newball=0x7f030019;
+        public static final int newbowler=0x7f03001a;
+        public static final int newleague=0x7f03001b;
+        public static final int scorerecord=0x7f03001c;
+        public static final int spinnertext=0x7f03001d;
+        public static final int statfunctions=0x7f03001e;
+        public static final int stats=0x7f03001f;
+        public static final int statselect=0x7f030020;
     }
     public static final class menu {
-        public static final int menu=0x7f080000;
+        public static final int menu=0x7f0a0000;
     }
     public static final class string {
-        public static final int accept=0x7f050004;
-        public static final int alldates=0x7f050023;
-        public static final int app_name=0x7f050001;
-        public static final int average=0x7f050003;
-        public static final int ball1=0x7f050014;
-        public static final int ball2=0x7f050015;
-        public static final int ball3=0x7f050016;
-        public static final int ballName=0x7f050025;
-        public static final int ballused=0x7f050017;
-        public static final int betweendate=0x7f050020;
-        public static final int cancel=0x7f050005;
-        public static final int clear=0x7f050018;
-        public static final int createbowler=0x7f050007;
-        public static final int createleague=0x7f05000a;
-        public static final int date=0x7f05000d;
-        public static final int daterange=0x7f050022;
-        public static final int finalize=0x7f05001a;
-        public static final int frame=0x7f050013;
-        public static final int frameScore=0x7f050019;
-        public static final int gameone=0x7f05000e;
-        public static final int gamethree=0x7f050010;
-        public static final int gametwo=0x7f05000f;
-        public static final int go=0x7f050008;
-        public static final int graphicalstats=0x7f05001f;
-        public static final int hello=0x7f050000;
-        public static final int house=0x7f05000c;
-        public static final int leaguename=0x7f05000b;
-        public static final int list=0x7f050012;
-        public static final int listBalls=0x7f050026;
-        public static final int name=0x7f050002;
-        public static final int newBall=0x7f050024;
-        public static final int next=0x7f05001c;
-        public static final int reset=0x7f05001d;
-        public static final int score=0x7f05001b;
-        public static final int selectbowler=0x7f050006;
-        public static final int selectleague=0x7f050009;
-        public static final int series=0x7f050011;
-        public static final int singledate=0x7f050021;
-        public static final int stats=0x7f05001e;
+        public static final int accept=0x7f05001d;
+        public static final int alldates=0x7f05003c;
+        public static final int app_id=0x7f050040;
+        public static final int app_name=0x7f05001a;
+        public static final int average=0x7f05001c;
+        public static final int ball1=0x7f05002d;
+        public static final int ball2=0x7f05002e;
+        public static final int ball3=0x7f05002f;
+        public static final int ballName=0x7f05003e;
+        public static final int ballused=0x7f050030;
+        public static final int betweendate=0x7f050039;
+        public static final int cancel=0x7f05001e;
+        public static final int clear=0x7f050031;
+        public static final int com_facebook_choose_friends=0x7f05000f;
+        public static final int com_facebook_dialogloginactivity_ok_button=0x7f050000;
+        public static final int com_facebook_internet_permission_error_message=0x7f050013;
+        public static final int com_facebook_internet_permission_error_title=0x7f050012;
+        public static final int com_facebook_loading=0x7f050011;
+        public static final int com_facebook_loginview_cancel_action=0x7f050006;
+        public static final int com_facebook_loginview_log_in_button=0x7f050002;
+        public static final int com_facebook_loginview_log_out_action=0x7f050005;
+        public static final int com_facebook_loginview_log_out_button=0x7f050001;
+        public static final int com_facebook_loginview_logged_in_as=0x7f050003;
+        public static final int com_facebook_loginview_logged_in_using_facebook=0x7f050004;
+        public static final int com_facebook_logo_content_description=0x7f050007;
+        public static final int com_facebook_nearby=0x7f050010;
+        public static final int com_facebook_picker_done_button_text=0x7f05000e;
+        public static final int com_facebook_placepicker_subtitle_catetory_only_format=0x7f05000c;
+        public static final int com_facebook_placepicker_subtitle_format=0x7f05000b;
+        public static final int com_facebook_placepicker_subtitle_were_here_only_format=0x7f05000d;
+        public static final int com_facebook_requesterror_password_changed=0x7f050016;
+        public static final int com_facebook_requesterror_permissions=0x7f050018;
+        public static final int com_facebook_requesterror_reconnect=0x7f050017;
+        public static final int com_facebook_requesterror_relogin=0x7f050015;
+        public static final int com_facebook_requesterror_web_login=0x7f050014;
+        public static final int com_facebook_usersettingsfragment_log_in_button=0x7f050008;
+        public static final int com_facebook_usersettingsfragment_logged_in=0x7f050009;
+        public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f05000a;
+        public static final int createbowler=0x7f050020;
+        public static final int createleague=0x7f050023;
+        public static final int date=0x7f050026;
+        public static final int daterange=0x7f05003b;
+        public static final int finalize=0x7f050033;
+        public static final int frame=0x7f05002c;
+        public static final int frameScore=0x7f050032;
+        public static final int gameone=0x7f050027;
+        public static final int gamethree=0x7f050029;
+        public static final int gametwo=0x7f050028;
+        public static final int go=0x7f050021;
+        public static final int graphicalstats=0x7f050038;
+        public static final int hello=0x7f050019;
+        public static final int house=0x7f050025;
+        public static final int leaguename=0x7f050024;
+        public static final int list=0x7f05002b;
+        public static final int listBalls=0x7f05003f;
+        public static final int name=0x7f05001b;
+        public static final int newBall=0x7f05003d;
+        public static final int next=0x7f050035;
+        public static final int reset=0x7f050036;
+        public static final int score=0x7f050034;
+        public static final int selectbowler=0x7f05001f;
+        public static final int selectleague=0x7f050022;
+        public static final int series=0x7f05002a;
+        public static final int singledate=0x7f05003a;
+        public static final int stats=0x7f050037;
     }
     public static final class style {
-        public static final int Buttons=0x7f070002;
-        public static final int LargeText=0x7f070001;
-        public static final int MediumText=0x7f070000;
-        public static final int TableText=0x7f070003;
+        public static final int Buttons=0x7f080004;
+        public static final int LargeText=0x7f080003;
+        public static final int MediumText=0x7f080002;
+        public static final int TableText=0x7f080005;
+        public static final int com_facebook_loginview_default_style=0x7f080000;
+        public static final int com_facebook_loginview_silver_style=0x7f080001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a com_facebook_friend_picker_fragment.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_facebook_friend_picker_fragment_multi_select com.dewald.goodBowler:multi_select}</code></td><td></td></tr>
+           </table>
+           @see #com_facebook_friend_picker_fragment_multi_select
+         */
+        public static final int[] com_facebook_friend_picker_fragment = {
+            0x7f010007
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#multi_select}
+          attribute's value can be found in the {@link #com_facebook_friend_picker_fragment} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:multi_select
+        */
+        public static final int com_facebook_friend_picker_fragment_multi_select = 0;
+        /** Attributes that can be used with a com_facebook_login_view.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_facebook_login_view_confirm_logout com.dewald.goodBowler:confirm_logout}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_fetch_user_info com.dewald.goodBowler:fetch_user_info}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_login_text com.dewald.goodBowler:login_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_logout_text com.dewald.goodBowler:logout_text}</code></td><td></td></tr>
+           </table>
+           @see #com_facebook_login_view_confirm_logout
+           @see #com_facebook_login_view_fetch_user_info
+           @see #com_facebook_login_view_login_text
+           @see #com_facebook_login_view_logout_text
+         */
+        public static final int[] com_facebook_login_view = {
+            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#confirm_logout}
+          attribute's value can be found in the {@link #com_facebook_login_view} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:confirm_logout
+        */
+        public static final int com_facebook_login_view_confirm_logout = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#fetch_user_info}
+          attribute's value can be found in the {@link #com_facebook_login_view} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:fetch_user_info
+        */
+        public static final int com_facebook_login_view_fetch_user_info = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#login_text}
+          attribute's value can be found in the {@link #com_facebook_login_view} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:login_text
+        */
+        public static final int com_facebook_login_view_login_text = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#logout_text}
+          attribute's value can be found in the {@link #com_facebook_login_view} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:logout_text
+        */
+        public static final int com_facebook_login_view_logout_text = 3;
+        /** Attributes that can be used with a com_facebook_picker_fragment.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_background com.dewald.goodBowler:done_button_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_text com.dewald.goodBowler:done_button_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_extra_fields com.dewald.goodBowler:extra_fields}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_pictures com.dewald.goodBowler:show_pictures}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_title_bar com.dewald.goodBowler:show_title_bar}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_bar_background com.dewald.goodBowler:title_bar_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_text com.dewald.goodBowler:title_text}</code></td><td></td></tr>
+           </table>
+           @see #com_facebook_picker_fragment_done_button_background
+           @see #com_facebook_picker_fragment_done_button_text
+           @see #com_facebook_picker_fragment_extra_fields
+           @see #com_facebook_picker_fragment_show_pictures
+           @see #com_facebook_picker_fragment_show_title_bar
+           @see #com_facebook_picker_fragment_title_bar_background
+           @see #com_facebook_picker_fragment_title_text
+         */
+        public static final int[] com_facebook_picker_fragment = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#done_button_background}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:done_button_background
+        */
+        public static final int com_facebook_picker_fragment_done_button_background = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#done_button_text}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:done_button_text
+        */
+        public static final int com_facebook_picker_fragment_done_button_text = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#extra_fields}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:extra_fields
+        */
+        public static final int com_facebook_picker_fragment_extra_fields = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#show_pictures}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:show_pictures
+        */
+        public static final int com_facebook_picker_fragment_show_pictures = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#show_title_bar}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:show_title_bar
+        */
+        public static final int com_facebook_picker_fragment_show_title_bar = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#title_bar_background}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:title_bar_background
+        */
+        public static final int com_facebook_picker_fragment_title_bar_background = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#title_text}
+          attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:title_text
+        */
+        public static final int com_facebook_picker_fragment_title_text = 3;
+        /** Attributes that can be used with a com_facebook_place_picker_fragment.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_radius_in_meters com.dewald.goodBowler:radius_in_meters}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_results_limit com.dewald.goodBowler:results_limit}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_search_text com.dewald.goodBowler:search_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_show_search_box com.dewald.goodBowler:show_search_box}</code></td><td></td></tr>
+           </table>
+           @see #com_facebook_place_picker_fragment_radius_in_meters
+           @see #com_facebook_place_picker_fragment_results_limit
+           @see #com_facebook_place_picker_fragment_search_text
+           @see #com_facebook_place_picker_fragment_show_search_box
+         */
+        public static final int[] com_facebook_place_picker_fragment = {
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#radius_in_meters}
+          attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:radius_in_meters
+        */
+        public static final int com_facebook_place_picker_fragment_radius_in_meters = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#results_limit}
+          attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:results_limit
+        */
+        public static final int com_facebook_place_picker_fragment_results_limit = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#search_text}
+          attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:search_text
+        */
+        public static final int com_facebook_place_picker_fragment_search_text = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#show_search_box}
+          attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:show_search_box
+        */
+        public static final int com_facebook_place_picker_fragment_show_search_box = 3;
+        /** Attributes that can be used with a com_facebook_profile_picture_view.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_is_cropped com.dewald.goodBowler:is_cropped}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_preset_size com.dewald.goodBowler:preset_size}</code></td><td></td></tr>
+           </table>
+           @see #com_facebook_profile_picture_view_is_cropped
+           @see #com_facebook_profile_picture_view_preset_size
+         */
+        public static final int[] com_facebook_profile_picture_view = {
+            0x7f010010, 0x7f010011
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#is_cropped}
+          attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:is_cropped
+        */
+        public static final int com_facebook_profile_picture_view_is_cropped = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.dewald.goodBowler.R.attr#preset_size}
+          attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>small</code></td><td>-2</td><td> Keep in sync with constants in ProfilePictureView </td></tr>
+<tr><td><code>normal</code></td><td>-3</td><td></td></tr>
+<tr><td><code>large</code></td><td>-4</td><td></td></tr>
+</table>
+          @attr name android:preset_size
+        */
+        public static final int com_facebook_profile_picture_view_preset_size = 0;
+    };
 }

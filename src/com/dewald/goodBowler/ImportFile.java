@@ -18,15 +18,15 @@ public class ImportFile {
 	String backupDBPath = "bowlerdata";
 	
 	public boolean exportData(){
-		Log.v("sdcard", sdcard.toString());
-		Log.v("sdcard", data.toString());
+		//Log.v("sdcard", sdcard.toString());
+		//Log.v("sdcard", data.toString());
 		boolean export = false;
 		try {
 		if(sdcard.canWrite()) {
 			File currentDB = new File(data, currentDBPath);
 			File backupDB = new File(sdcard, backupDBPath);
-			Log.v("canWrite", "canWrite");
-			Log.v("currentDB", currentDB.toString());
+			//Log.v("canWrite", "canWrite");
+			//Log.v("currentDB", currentDB.toString());
 			
 			if(currentDB.exists()){
 				FileChannel src = new FileInputStream(backupDB).getChannel();
@@ -35,11 +35,11 @@ public class ImportFile {
 				src.close();
 				dst.close();
 				export = true;
-				Log.v("currentDB", "exists");
+				//Log.v("currentDB", "exists");
 			}
 		}
 		}catch(Exception e){
-			Log.v("Exception", e.toString());
+			//Log.v("Exception", e.toString());
 		}
 		return export;
 	}
