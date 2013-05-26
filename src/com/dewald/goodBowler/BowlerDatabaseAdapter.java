@@ -199,14 +199,14 @@ public class BowlerDatabaseAdapter {
 	} */
 	
 	public Cursor fetchScoresForBowlerLeague(String bowler, String league) {
-		Log.e("Query", KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"");
+		//Log.e("Query", KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"");
 		return database.query(GAME_TABLE, new String[] { KEY_ROWID, KEY_BOWLER_NAME, KEY_LEAGUE_NAME, KEY_DATE, KEY_SCORE, KEY_GAME_NUMBER }, 
 				KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +"", null, null, null, null);
 		
 	}
 	
 	 public Cursor fetchScoresForBowlerLeagueDate(String bowler, String league, String date) {
-		Log.e("Query", KEY_BOWLER_NAME + "='" + bowler +"' AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +" AND " + KEY_DATE + "='" +date+"'");
+		//Log.e("Query", KEY_BOWLER_NAME + "='" + bowler +"' AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +" AND " + KEY_DATE + "='" +date+"'");
 		return database.query(GAME_TABLE, new String[] {KEY_SCORE, KEY_GAME_NUMBER},
 				KEY_BOWLER_NAME + "=" + DatabaseUtils.sqlEscapeString(bowler) +" AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) +" AND " + KEY_DATE + "='" +date+"'", 
 				null, null, null, null);
@@ -243,7 +243,7 @@ public class BowlerDatabaseAdapter {
 	//fetches data for the listSeries Graphing function
 	//must fix the league night table reference
 	public Cursor fetchListSeriesData(String bowler, String date1, String date2){
-		Log.v("List Series Query","SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename;");
+		//Log.v("List Series Query","SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename;");
 		return database.rawQuery("SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename;", null);
 	}
 	
@@ -275,7 +275,7 @@ public class BowlerDatabaseAdapter {
 		Cursor query;
 		if(league.contentEquals("%")){
 			query = database.rawQuery("SELECT sum(score), date, leaguename FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND " + KEY_LEAGUE_NAME + " LIKE " + DatabaseUtils.sqlEscapeString(league) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date, leaguename", null);
-			Log.v("series query", "" + query.getCount());
+			//Log.v("series query", "" + query.getCount());
 		}else{
 			query = database.rawQuery("SELECT sum(score), date FROM game WHERE bowlername = " + DatabaseUtils.sqlEscapeString(bowler) + " AND " + KEY_LEAGUE_NAME + "=" + DatabaseUtils.sqlEscapeString(league) + " AND date BETWEEN '" + date1 + "' AND '" + date2 + "' GROUP BY date", null);
 		}

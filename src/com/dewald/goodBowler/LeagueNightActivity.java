@@ -191,7 +191,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			numGames = 3;
 		}
 		loadGames(numGames);
-		Log.v("GameCountgetGames", "" + numGames);
+		//Log.v("GameCountgetGames", "" + numGames);
 	}
 	
 	//this loads the games in the layout the first game input is added in the layout and the rest are set by what is in the database
@@ -253,7 +253,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			ll.setId(llArray[gameCount]);
 			llTop.addView(gameView);
 			gameCount++;
-			Log.v("GameCount", "" + gameCount);
+			//Log.v("GameCount", "" + gameCount);
 		}
 	}
 	
@@ -349,8 +349,8 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 				EditText et = (EditText)findViewById(etArray[i]);
 				if(!et.getText().toString().equals("")){
 					scoreArray[i] = Integer.parseInt(et.getText().toString());
-				Log.v("TCCount", "" + i);
-				Log.v("TCGameCount", "" + gameCount);
+				//Log.v("TCCount", "" + i);
+				//Log.v("TCGameCount", "" + gameCount);
 				}
 			}
 		}catch(NumberFormatException nfe){
@@ -418,8 +418,8 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			c.moveToFirst();
 			for(int i = 0; i < c.getCount(); i++){
 				scoreArray[c.getInt(1) - 1] = c.getInt(0);
-				Log.v("Score", "" + scoreArray[c.getInt(1) - 1]);
-				Log.v("Game #", "" + c.getInt(1));
+				//Log.v("Score", "" + scoreArray[c.getInt(1) - 1]);
+				//Log.v("Game #", "" + c.getInt(1));
 				c.moveToNext();
 			}
 		}
@@ -430,7 +430,7 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			for(int i = 0; i < btnArray.length; i++){
 				if(v == btnArray[i]){
 					gameNumber =  i + 1;
-					Log.v("GameNumber", "" + gameNumber);
+					//Log.v("GameNumber", "" + gameNumber);
 				}
 			}
 		return gameNumber;

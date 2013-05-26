@@ -109,7 +109,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
         regDate = extras.getString("date");
         bowler = extras.getString("bowler");
         league = extras.getString("league");
-        Log.v("gameNumber", gameNumber);
+        //Log.v("gameNumber", gameNumber);
         
         pin1 = (CheckBox)findViewById(R.id.pin1);
         pin2 = (CheckBox)findViewById(R.id.pin2);
@@ -179,13 +179,13 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
         		Bitmap bg;
         		switch(id){
         		case R.id.markSeekBar:
-        			Log.v("width + height", xNew + " " + yNew);
+        			//Log.v("width + height", xNew + " " + yNew);
         			bg = BitmapFactory.decodeResource(getResources(), R.drawable.arrows);
         			bg = Bitmap.createScaledBitmap(bg, xNew, yNew, false);
         			markSeekBar.setBackgroundDrawable(new BitmapDrawable(getResources(), bg));
         		break;
         		case R.id.feetSeekBar:
-        			Log.v("width + height", xNew + " " + yNew);
+        			//Log.v("width + height", xNew + " " + yNew);
         			bg = BitmapFactory.decodeResource(getResources(), R.drawable.feet);
         			bg = Bitmap.createScaledBitmap(bg, xNew, yNew, false);
         			feetSeekBar.setBackgroundDrawable(new BitmapDrawable(getResources(), bg));
@@ -427,7 +427,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 			cursor = mDbHelper.fetchBalls(bowler);
 			cursor.moveToPosition(pos);
 			ball = cursor.getString(cursor.getColumnIndex(BowlerDatabaseAdapter.KEY_BALL));
-			Log.v("Ball Cursor", ball);
+			//Log.v("Ball Cursor", ball);
 			break;
 		}
 	}
@@ -442,12 +442,12 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 	public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 		switch(seekBar.getId()){
 		case R.id.markSeekBar:
-			Log.v("Mark Bar Pos", "" + progress);
+			//Log.v("Mark Bar Pos", "" + progress);
 			markTV.setText("Mark Selected: " + (progress + 1) + " board");
 			mark = "" + (progress + 1);
 			break;
 		case R.id.feetSeekBar:
-			Log.v("Feet Bar Pos", "" + progress);
+			//Log.v("Feet Bar Pos", "" + progress);
 			feetTV.setText("Feet Position: " + (progress + 1) + " board");
 			feet = "" + (progress + 1);
 			break;
@@ -512,7 +512,7 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 		ballArray[arrayPos] = ball;
 		markArray[arrayPos] = mark;
 		feetArray[arrayPos] = feet;
-		Log.v("Ball", ballArray[arrayPos]);
+		//Log.v("Ball", ballArray[arrayPos]);
 	}
 	
 	public void clearPins(){

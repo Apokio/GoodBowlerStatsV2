@@ -105,7 +105,7 @@ public class Stats extends Activity {
 		cursor.moveToFirst();
 		for(int i = 0; i < cursor.getCount(); i++){
 			series.add(cursor.getInt(0));
-			Log.v("Series", cursor.getString(0));
+			//Log.v("Series", cursor.getString(0));
 			cursor.moveToNext();
 		}
 		//writes the arraylist to an Array

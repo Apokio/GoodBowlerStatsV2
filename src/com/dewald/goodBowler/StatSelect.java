@@ -313,7 +313,7 @@ public class StatSelect extends Activity implements OnClickListener, OnItemSelec
 			public void onClick(DialogInterface dialog, int which) {
 				 cursor.moveToPosition(which);
 				 ball = cursor.getString(cursor.getColumnIndex(BowlerDatabaseAdapter.KEY_BALL));
-				 Log.v("Ball Selected", ball);
+				 //Log.v("Ball Selected", ball);
 				 launchBallStats();
 			}
 		});
