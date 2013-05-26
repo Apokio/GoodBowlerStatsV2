@@ -210,43 +210,6 @@ containing a value of this type.
         public static final int com_facebook_top_background=0x7f020020;
         public static final int com_facebook_top_button=0x7f020021;
         public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020022;
-<<<<<<< HEAD
-        public static final int feet=0x7f020023;
-        public static final int frame_button=0x7f020024;
-        public static final int ic_about=0x7f020025;
-        public static final int ic_action_search=0x7f020026;
-        public static final int ic_help=0x7f020027;
-        public static final int ic_launcher=0x7f020028;
-        public static final int icon=0x7f020029;
-        public static final int panel_picture_frame_bg_focus_blue=0x7f02002a;
-        public static final int panel_picture_frame_bg_normal=0x7f02002b;
-        public static final int panel_picture_frame_bg_pressed_blue=0x7f02002c;
-        public static final int pin=0x7f02002d;
-        public static final int pinx=0x7f02002e;
-        public static final int scoreblock=0x7f02002f;
-        public static final int titletext=0x7f020030;
-    }
-    public static final class id {
-        public static final int FinalButton=0x7f0400c5;
-        public static final int about=0x7f0400d9;
-        public static final int accept=0x7f04009a;
-        public static final int acceptButton=0x7f040084;
-        public static final int addButton=0x7f040082;
-        public static final int allDates=0x7f0400d6;
-        public static final int average=0x7f04009e;
-        public static final int average_entry=0x7f040062;
-        public static final int ball1=0x7f0400bc;
-        public static final int ball2=0x7f0400bd;
-        public static final int ball3=0x7f0400be;
-        public static final int ballName=0x7f040099;
-        public static final int ballSpinner=0x7f0400bf;
-        public static final int ballStatsButton=0x7f0400d8;
-        public static final int ball_entry=0x7f04008d;
-        public static final int bowlerLeagueBallName=0x7f040053;
-        public static final int bowlerLeagueName=0x7f0400ce;
-        public static final int bowlerName=0x7f04009d;
-        public static final int bowlerSpinner=0x7f04008f;
-=======
         public static final int fblike=0x7f020023;
         public static final int feet=0x7f020024;
         public static final int frame_button=0x7f020025;
@@ -283,7 +246,6 @@ containing a value of this type.
         public static final int bowlerLeagueName=0x7f0400cf;
         public static final int bowlerName=0x7f04009e;
         public static final int bowlerSpinner=0x7f040090;
->>>>>>> FacebookIntegration
         public static final int bowler_entry=0x7f04007b;
         public static final int btn=0x7f040088;
         public static final int btnGame1=0x7f040017;
@@ -306,13 +268,8 @@ containing a value of this type.
         public static final int btnGame7=0x7f04001d;
         public static final int btnGame8=0x7f04001e;
         public static final int btnGame9=0x7f04001f;
-<<<<<<< HEAD
-        public static final int cancel=0x7f04009b;
-        public static final int cancelButton=0x7f04009f;
-=======
         public static final int cancel=0x7f04009c;
         public static final int cancelButton=0x7f0400a0;
->>>>>>> FacebookIntegration
         public static final int com_facebook_login_activity_progress_bar=0x7f040065;
         public static final int com_facebook_picker_activity_circle=0x7f040064;
         public static final int com_facebook_picker_checkbox=0x7f040067;
@@ -332,15 +289,9 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f040077;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f040075;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040076;
-<<<<<<< HEAD
-        public static final int dateButton=0x7f040092;
-        public static final int dateButton1=0x7f0400c7;
-        public static final int dateButton2=0x7f0400c9;
-=======
         public static final int dateButton=0x7f040093;
         public static final int dateButton1=0x7f0400c8;
         public static final int dateButton2=0x7f0400ca;
->>>>>>> FacebookIntegration
         public static final int dateRange=0x7f040054;
         public static final int dateTV=0x7f04007e;
         public static final int date_entry=0x7f04008a;
@@ -365,43 +316,6 @@ containing a value of this type.
         public static final int etGame7=0x7f040009;
         public static final int etGame8=0x7f04000a;
         public static final int etGame9=0x7f04000b;
-<<<<<<< HEAD
-        public static final int exportdata=0x7f0400dc;
-        public static final int feetSeekBar=0x7f0400c3;
-        public static final int feetTV=0x7f0400c2;
-        public static final int frame10button=0x7f0400ac;
-        public static final int frame1button=0x7f0400a3;
-        public static final int frame2button=0x7f0400a4;
-        public static final int frame3button=0x7f0400a5;
-        public static final int frame4button=0x7f0400a6;
-        public static final int frame5button=0x7f0400a7;
-        public static final int frame6button=0x7f0400a8;
-        public static final int frame7button=0x7f0400a9;
-        public static final int frame8button=0x7f0400aa;
-        public static final int frame9button=0x7f0400ab;
-        public static final int frameSpinner=0x7f0400bb;
-        public static final int gameTV=0x7f04007f;
-        public static final int game_number_entry=0x7f04008b;
-        public static final int graphicalStatButton=0x7f040095;
-        public static final int help=0x7f0400da;
-        public static final int helpView=0x7f040078;
-        public static final int house=0x7f0400a1;
-        public static final int house_entry=0x7f04007a;
-        public static final int imageView1=0x7f04008e;
-        public static final int importdata=0x7f0400db;
-        public static final int large=0x7f040002;
-        public static final int leagueCheckBox=0x7f0400d4;
-        public static final int leagueName=0x7f0400a0;
-        public static final int leagueSpinner=0x7f040090;
-        public static final int leagueTV=0x7f04007d;
-        public static final int league_entry=0x7f040089;
-        public static final int leaguename_entry=0x7f040079;
-        public static final int list=0x7f0400a2;
-        public static final int listBallsButton=0x7f04009c;
-        public static final int listButton=0x7f040085;
-        public static final int listGames=0x7f0400ca;
-        public static final int listScores=0x7f0400cb;
-=======
         public static final int exportdata=0x7f0400dd;
         public static final int fbButton=0x7f04008f;
         public static final int feetSeekBar=0x7f0400c4;
@@ -438,7 +352,6 @@ containing a value of this type.
         public static final int listButton=0x7f040085;
         public static final int listGames=0x7f0400cb;
         public static final int listScores=0x7f0400cc;
->>>>>>> FacebookIntegration
         public static final int ll=0x7f040086;
         public static final int ll1=0x7f04003f;
         public static final int ll10=0x7f040048;
@@ -461,46 +374,6 @@ containing a value of this type.
         public static final int ll8=0x7f040046;
         public static final int ll9=0x7f040047;
         public static final int llTop=0x7f040080;
-<<<<<<< HEAD
-        public static final int markSeekBar=0x7f0400c1;
-        public static final int markTV=0x7f0400c0;
-        public static final int nameTV=0x7f04007c;
-        public static final int name_entry=0x7f040061;
-        public static final int newBallButton=0x7f040098;
-        public static final int newBowlerButton=0x7f040096;
-        public static final int newLeagueButton=0x7f040097;
-        public static final int normal=0x7f040001;
-        public static final int picker_subtitle=0x7f040074;
-        public static final int pin1=0x7f0400b7;
-        public static final int pin10=0x7f0400b1;
-        public static final int pin2=0x7f0400b5;
-        public static final int pin3=0x7f0400b6;
-        public static final int pin4=0x7f0400b2;
-        public static final int pin5=0x7f0400b3;
-        public static final int pin6=0x7f0400b4;
-        public static final int pin7=0x7f0400ae;
-        public static final int pin8=0x7f0400af;
-        public static final int pin9=0x7f0400b0;
-        public static final int removeButton=0x7f040083;
-        public static final int resetButton=0x7f0400c4;
-        public static final int resetFrame=0x7f0400b9;
-        public static final int scoreButton=0x7f040093;
-        public static final int scoreTV=0x7f0400ad;
-        public static final int score_entry=0x7f04008c;
-        public static final int search_box=0x7f040073;
-        public static final int series=0x7f040081;
-        public static final int singleDate=0x7f0400d5;
-        public static final int small=0x7f040000;
-        public static final int spareButton=0x7f0400ba;
-        public static final int sparesByPin=0x7f0400cd;
-        public static final int statButton=0x7f040094;
-        public static final int statsButton=0x7f0400d7;
-        public static final int strikeButton=0x7f0400b8;
-        public static final int strikeSpares=0x7f0400cc;
-        public static final int tableAverage=0x7f0400cf;
-        public static final int tableHighGame=0x7f0400d1;
-        public static final int tableHighSeries=0x7f0400d2;
-=======
         public static final int markSeekBar=0x7f0400c2;
         public static final int markTV=0x7f0400c1;
         public static final int nameTV=0x7f04007c;
@@ -539,7 +412,6 @@ containing a value of this type.
         public static final int tableAverage=0x7f0400d0;
         public static final int tableHighGame=0x7f0400d2;
         public static final int tableHighSeries=0x7f0400d3;
->>>>>>> FacebookIntegration
         public static final int tableMultiPinChances=0x7f04005f;
         public static final int tableMultiPinConversion=0x7f04005e;
         public static final int tableMultiPinPercent=0x7f040060;
@@ -552,19 +424,11 @@ containing a value of this type.
         public static final int tableSparePercent=0x7f04005a;
         public static final int tableStrikeChances=0x7f040056;
         public static final int tableStrikePercent=0x7f040057;
-<<<<<<< HEAD
-        public static final int tableStrikesRow=0x7f0400d3;
-        public static final int tableTotalGames=0x7f0400d0;
-        public static final int tvDate=0x7f040091;
-        public static final int tvDate1=0x7f0400c6;
-        public static final int tvDate2=0x7f0400c8;
-=======
         public static final int tableStrikesRow=0x7f0400d4;
         public static final int tableTotalGames=0x7f0400d1;
         public static final int tvDate=0x7f040092;
         public static final int tvDate1=0x7f0400c7;
         public static final int tvDate2=0x7f0400c9;
->>>>>>> FacebookIntegration
         public static final int tvGame1=0x7f04002b;
         public static final int tvGame10=0x7f040034;
         public static final int tvGame11=0x7f040035;
