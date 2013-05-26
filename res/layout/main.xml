@@ -15,6 +15,13 @@
         android:layout_height="wrap_content"
         android:src="@drawable/titletext" />
 
+    <ImageButton
+        android:id="@+id/fbButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/fblike" />
+
 <TextView
 	android:layout_width="fill_parent"
     android:layout_height="wrap_content"

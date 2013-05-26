@@ -5,8 +5,10 @@ import java.util.Calendar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -37,6 +40,7 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 	private Button statButton;
 	private Button graphButton;
 	private Button ballButton;
+	private ImageButton fbButton;
 	private TextView tvDate;
 	private int year;
 	private int month;
@@ -79,6 +83,8 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		graphButton.setOnClickListener(this);
 		ballButton = (Button)findViewById(R.id.newBallButton);
 		ballButton.setOnClickListener(this);
+		fbButton = (ImageButton)findViewById(R.id.fbButton);
+		fbButton.setOnClickListener(this);
 		
 		tvDate = (TextView)findViewById(R.id.tvDate);
 		
@@ -147,6 +153,10 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		case R.id.newBallButton:
 			i = new Intent(Main.this, BallManager.class);
 			startActivity(i);
+			break;
+		case R.id.fbButton:
+    		Intent fbIntent = facebookIntent();
+    		startActivity(fbIntent);
 			break;
 		}
 		
@@ -391,7 +401,15 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		 if(!openExists){
 			 dbHelper.createLeague("Open Bowling", "EveryHouse", bowler);
 		 }
-		 cursor.close();
-		
+		 cursor.close();	
+	}
+	
+	private Intent facebookIntent(){
+		try{
+			this.getPackageManager().getPackageInfo("com.facebook.katana", 0);
+			return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/170468596448040"));
+		}catch(Exception e){
+			return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/GoodBowlerStats"));
+		}
 	}
 }
