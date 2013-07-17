@@ -219,15 +219,19 @@ public class LeagueNightActivity extends Activity implements OnClickListener, Te
 			gameCount++;
 		}
 		Cursor c = mDbHelper.fetchScoresForBowlerLeagueDate(bowler, league, sqlDate);
-		if(c.getCount() > 0){
-			c.moveToFirst();
-			for(int i = 0; i < c.getCount(); i++){
-				int gameNum = c.getInt(1);
-				EditText et = (EditText)findViewById(etArray[gameNum - 1]);
-				et.setText(c.getString(0));
-				c.moveToNext();
+			if(c.getCount() > 0){
+				c.moveToFirst();
+				for(int i = 0; i < c.getCount(); i++){
+					int gameNum = c.getInt(1);
+					EditText et = (EditText)findViewById(etArray[gameNum - 1]);
+					try{
+						et.setText(c.getString(0));
+					}catch(NullPointerException npe){
+						et.setText("0");
+					}
+					c.moveToNext();
+				}
 			}
-		}
 	}
 	
 	//this adds the game after the add game button is pressed

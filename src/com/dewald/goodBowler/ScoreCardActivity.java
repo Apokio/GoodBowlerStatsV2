@@ -79,14 +79,14 @@ public class ScoreCardActivity extends Activity implements OnClickListener, OnIt
 	private String[] feetArray = {"-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-"};
 	private Integer totalScore;
 	private String gameNumber = "none";
-	private String date = "";
-	private String ball = "";
+	private String date = "-";
+	private String ball = "-";
 	private Bundle extras;
 	private String regDate;
-	private String bowler;
-	private String league;
-	private String mark;
-	private String feet;
+	private String bowler = "-";
+	private String league = "-";
+	private String mark = "-";
+	private String feet = "-";
 	
 	private BowlerDatabaseAdapter mDbHelper;
 	private ScoreCalculator calculator = new ScoreCalculator();
