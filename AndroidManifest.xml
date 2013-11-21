@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.dewald.goodBowler" 
 	  android:installLocation="auto"
-      android:versionCode="21"
-      android:versionName="2.0.4">
-    <uses-sdk android:minSdkVersion="4" />
+      android:versionCode="23"
+      android:versionName="2.0.6">
+    <uses-sdk android:minSdkVersion="8" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
 		<activity android:label="Bowler List" android:name=".ListBowlers" />
-		<activity android:label="Create New Bowler" android:name=".NewBowler" />
+		<activity android:label="Create New Bowler" android:name=".NewBowler" android:windowSoftInputMode="stateAlwaysVisible"/>
 		<activity android:label="Enter Score Details" android:name=".ScoreCardActivity" />
-		<activity android:label="Create New League" android:name=".NewLeague" />
+		<activity android:label="Create New League" android:name=".NewLeague" android:windowSoftInputMode="stateAlwaysVisible"/>
 		<activity android:label="League List" android:name=".ListLeagues" />
 		<activity android:label="League Night Scores" android:name=".LeagueNightActivity"/>
 		<activity android:label="League Scores List" android:name=".ListLeagueNight"/>
@@ -28,7 +28,7 @@
 		<activity android:label="Select Details of Stats to View" android:name=".StatSelect"/>
 		<activity android:label="Bowler Stats" android:name=".Stats"/>
 		<activity android:label="Good Bowler Stats Help" android:name=".HelpPage"/>
-		<activity android:label="Bowling Ball Manager" android:name=".BallManager"/>
+		<activity android:label="Bowling Ball Manager" android:name=".BallManager" android:windowSoftInputMode="stateAlwaysVisible"/>
 		<activity android:label="Bowling Ball List" android:name=".ListBalls"/>
 		<activity android:label="Bowling Ball Stats" android:name=".BallStats"/>
 		<activity android:name="org.achartengine.GraphicalActivity" />

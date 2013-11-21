@@ -1,11 +1,13 @@
 package com.dewald.goodBowler;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +43,9 @@ public class BallManager extends Activity implements OnClickListener, OnItemSele
 		btnCancel.setOnClickListener(this);
 		btnList = (Button)findViewById(R.id.listBallsButton);
 		btnList.setOnClickListener(this);
+		
+		((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE))
+        .showSoftInput(etBall, InputMethodManager.SHOW_FORCED);
 		
 		fillNameSpinner();
 	

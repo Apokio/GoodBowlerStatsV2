@@ -1,12 +1,15 @@
 package com.dewald.goodBowler;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class NewBowler extends Activity implements OnClickListener {
@@ -35,6 +38,9 @@ public class NewBowler extends Activity implements OnClickListener {
         btnCancel.setOnClickListener(this);
         btnList.setOnClickListener(this);
         
+        ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE))
+        .showSoftInput(etName, InputMethodManager.SHOW_FORCED);
+        
     }
     
     @Override
@@ -50,17 +56,28 @@ public class NewBowler extends Activity implements OnClickListener {
 				finish();
 				break;
 			case R.id.acceptButton:
-				String name = etName.getText().toString();
-				String average = etAvg.getText().toString();
-				mDbHelper.createBowler(name, average);
-				etName.setText("");
-				etAvg.setText("");
-	            break;
+				if(checkForInput()){
+					String name = etName.getText().toString();
+					String average = etAvg.getText().toString();
+					mDbHelper.createBowler(name, average);
+					etName.setText("");
+					etAvg.setText("");
+					finish();
+					break;
+				}else{
+					Toast toast = Toast.makeText(this, "You must input a bowler name.", Toast.LENGTH_LONG);
+					toast.show();
+					break;
+				}
 			case R.id.listButton:
 				Intent i1 = new Intent(NewBowler.this, ListBowlers.class);
 				startActivity(i1);
 				break;
 			}
+	}
+	
+	private boolean checkForInput(){
+		return (etName.getText().toString().length() > 0);
 	}
     
     

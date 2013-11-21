@@ -1,16 +1,19 @@
 package com.dewald.goodBowler;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class NewLeague extends Activity implements OnClickListener, OnItemSelectedListener {
@@ -44,6 +47,9 @@ public class NewLeague extends Activity implements OnClickListener, OnItemSelect
 		btnList = (Button)findViewById(R.id.list);
 		btnList.setOnClickListener(this);
 		
+		((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE))
+        .showSoftInput(etLeagueName, InputMethodManager.SHOW_FORCED);
+		
 		fillNameSpinner();
 		
 	}
@@ -61,13 +67,20 @@ public class NewLeague extends Activity implements OnClickListener, OnItemSelect
 			finish();
 			break;
 		case R.id.accept:
-			String leaguename = etLeagueName.getText().toString();
-			String house = etHouse.getText().toString();
-			String bowlerName = spinnerValue;
-			mDbHelper.createLeague(leaguename, house, bowlerName);
-			etLeagueName.setText("");
-			etHouse.setText("");
-            break;
+			if(checkForInput()){
+				String leaguename = etLeagueName.getText().toString();
+				String house = etHouse.getText().toString();
+				String bowlerName = spinnerValue;
+				mDbHelper.createLeague(leaguename, house, bowlerName);
+				etLeagueName.setText("");
+				etHouse.setText("");
+				finish();
+	            break;
+			}else{
+				Toast toast = Toast.makeText(this, "You must input a league name.", Toast.LENGTH_LONG);
+				toast.show();
+				break;
+			}
 		case R.id.list:
 			Intent i1 = new Intent(NewLeague.this, ListLeagues.class);
 			startActivity(i1);
@@ -103,5 +116,9 @@ public class NewLeague extends Activity implements OnClickListener, OnItemSelect
 	public void onNothingSelected(AdapterView<?> parent) {
 		//do nothing
 		
+	}
+	
+	private boolean checkForInput(){
+		return (etLeagueName.getText().toString().length() > 0);
 	}
 }

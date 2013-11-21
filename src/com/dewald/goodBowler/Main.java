@@ -238,6 +238,11 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		SimpleCursorAdapter names = new SimpleCursorAdapter(this, R.layout.spinnertext, cursor, from, to);
 		names.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
+		//check to see if any names are entered, if the names are empty then take the user to create a user
+		if(names.isEmpty()){
+			Intent i = new Intent(Main.this, NewBowler.class);
+			startActivity(i);
+		}
 		nameSpinner.setAdapter(names);
 	}
 	//fills the leaguename spinner with the names of the leagues that correspond with what bowler is selected in the bowler spinner
