@@ -14,13 +14,12 @@ import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -32,7 +31,7 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 
-public class StatFunctionsActivity extends Activity implements OnClickListener, OnItemSelectedListener{
+public class StatFunctionsActivity extends Activity implements OnClickListener, OnItemSelectedListener, OnDateSetListener{
 	
 	private BowlerDatabaseAdapter dbHelper;
 	
@@ -104,11 +103,11 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.dateButton1:
-			showDialog(1);
+			showDatePickerDialog();
 			picker = 1;
 			break;
 		case R.id.dateButton2:
-			showDialog(2);
+			showDatePickerDialog();
 			picker = 2;
 			break;
 		case R.id.listGames:
@@ -219,9 +218,33 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 		d = Integer.parseInt(st.nextToken());
 		//Log.v("Date", new StringBuilder().append(y).append("-").append(m).append("-").append(d).toString());
 		return new Date(y, m, d);
-	} 
+	}
 	
-	private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+	private void showDatePickerDialog() {
+		DialogFragment newFragment = DatePickerFragment.newInstance(3);
+	    newFragment.show(getFragmentManager(), "datePicker");
+		
+	}
+	
+	@Override
+	public void onDateSet(DatePicker view, int y, int m, int d) {
+		year = y;
+		month = m;
+		day = d;
+		switch(picker){
+		case 1:
+			updateDate(1);
+			createSQLDate(1);
+			break;
+		case 2:
+			updateDate(2);
+			createSQLDate(2);
+			break;
+		}
+		
+	}
+	
+	/*private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
 		public void onDateSet(DatePicker view, int y, int m, int d ) {
 			year = y;
 			month = m;
@@ -247,7 +270,7 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 			return new DatePickerDialog(this, dateSetListener, year, month, day);
 		}
 		return null;
-	}
+	} */
 	
 	private XYMultipleSeriesDataset listGamesDataset() {
 		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
@@ -592,4 +615,5 @@ public class StatFunctionsActivity extends Activity implements OnClickListener, 
 	    cursor.close();
 	    return dataset;
 	}
+
 }

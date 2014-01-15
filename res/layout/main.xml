@@ -13,6 +13,7 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:src="@drawable/titletext" />
 
     <ImageButton
@@ -97,32 +98,32 @@
     android:layout_height="wrap_content"
     android:text="@string/graphicalstats" />
 
-<TextView
-	android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="OR"
-    style="@style/MediumText"
-	/>
-<Button
-	android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/newBowlerButton"
-    android:text="@string/createbowler"
-    style="@style/Buttons"
-	/>
-<Button
-	android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/newLeagueButton"
-    android:text="@string/createleague"
-    style="@style/Buttons"
-	/>
-<Button
-	android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/newBallButton"
-    android:text="@string/newBall"
-    style="@style/Buttons"
-	/>
+<!-- <TextView -->
+<!-- 	android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:text="OR" -->
+<!--     style="@style/MediumText" -->
+<!-- 	/> -->
+<!-- <Button -->
+<!-- 	android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:id="@+id/newBowlerButton" -->
+<!--     android:text="@string/createbowler" -->
+<!--     style="@style/Buttons" -->
+<!-- 	/> -->
+<!-- <Button -->
+<!-- 	android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:id="@+id/newLeagueButton" -->
+<!--     android:text="@string/createleague" -->
+<!--     style="@style/Buttons" -->
+<!-- 	/> -->
+<!-- <Button -->
+<!-- 	android:layout_width="fill_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:id="@+id/newBallButton" -->
+<!--     android:text="@string/newBall" -->
+<!--     style="@style/Buttons" -->
+<!-- 	/> -->
 </LinearLayout>
 </ScrollView>
