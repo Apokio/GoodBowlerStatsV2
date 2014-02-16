@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:goodBowler="http://schemas.android.com/apk/res-auto">
+	
+	<item android:id="@+id/action_createBowler"
+	      android:title="@string/createbowler"
+	      android:showAsAction="ifRoom"
+	      goodBowler:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/action_createLeague"
+	      android:title="@string/createleague"
+	      android:showAsAction="ifRoom"
+	      goodBowler:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/action_ball"
+	      android:title="@string/newBall"
+	      android:showAsAction="ifRoom"
+	      goodBowler:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/action_about"
+  		  android:icon="@drawable/ic_about"
+  		  android:title="@string/about"
+  		  android:showAsAction="ifRoom"
+  		  goodBowler:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/help"
+  		  android:icon="@drawable/ic_help"
+  		  android:title="@string/help" 
+  		  android:showAsAction="ifRoom"
+  		  goodBowler:showAsAction="ifRoom"/>
+  	
+  	<item android:id="@+id/importdata"
+  		  android:icon="@android:drawable/ic_menu_upload"
+  		  android:title="@string/importData" 
+  		  android:showAsAction="ifRoom"
+  		  goodBowler:showAsAction="ifRoom"/>
+  	
+  	<item android:id="@+id/exportdata"
+  		  android:icon="@android:drawable/ic_menu_save"
+  		  android:title="@string/export" 
+  		  android:showAsAction="ifRoom"
+  		  goodBowler:showAsAction="ifRoom"/>
+</menu>
