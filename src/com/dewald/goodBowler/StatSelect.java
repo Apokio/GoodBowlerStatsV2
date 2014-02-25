@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.DialogFragment;
+import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,7 +30,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 
-public class StatSelect extends Activity implements OnClickListener, OnItemSelectedListener, OnCheckedChangeListener{
+public class StatSelect extends Activity implements OnClickListener, OnItemSelectedListener, OnCheckedChangeListener, OnDateSetListener{
 	
 	private BowlerDatabaseAdapter dbHelper;
 	
@@ -150,11 +152,11 @@ public class StatSelect extends Activity implements OnClickListener, OnItemSelec
 			}
 			break;
 		case R.id.dateButton1:
-			showDialog(1);
+			showDatePickerDialog();
 			picker = 1;
 			break;
 		case R.id.dateButton2:
-			showDialog(2);
+			showDatePickerDialog();
 			picker = 2;
 			break;
 		case R.id.ballStatsButton:
@@ -268,7 +270,7 @@ public class StatSelect extends Activity implements OnClickListener, OnItemSelec
 		}
 	}
 	
-	private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+	/*private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
 		public void onDateSet(DatePicker view, int y, int m, int d ) {
 			year = y;
 			month = m;
@@ -284,16 +286,11 @@ public class StatSelect extends Activity implements OnClickListener, OnItemSelec
 				break;
 			}
 		}
-	};
-	@Override
-	protected Dialog onCreateDialog(int id){
-		switch(id) {
-		case 1:
-			return new DatePickerDialog(this, dateSetListener, year, month, day);
-		case 2:
-			return new DatePickerDialog(this, dateSetListener, year, month, day);
-		}
-		return null;
+	};*/
+	
+	private void showDatePickerDialog() {
+		DialogFragment newFragment = DatePickerFragment.newInstance(2);
+	    newFragment.show(getFragmentManager(), "datePicker");
 	}
 	
 	private void ballPicker(){
@@ -390,6 +387,24 @@ public class StatSelect extends Activity implements OnClickListener, OnItemSelec
 			date1Button.setVisibility(View.VISIBLE);
 			date2Button.setVisibility(View.INVISIBLE);
 			}
+			break;
+		}
+		
+	}
+
+	@Override
+	public void onDateSet(DatePicker view, int y, int m, int d) {
+		year = y;
+		month = m;
+		day = d;
+		switch(picker){
+		case 1:
+			updateDate(1);
+			createSQLDate(1);
+			break;
+		case 2:
+			updateDate(2);
+			createSQLDate(2);
 			break;
 		}
 		

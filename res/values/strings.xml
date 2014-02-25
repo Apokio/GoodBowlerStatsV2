@@ -6,10 +6,10 @@
     <string name="accept">Accept</string>
     <string name="cancel">Cancel</string>
     <string name="selectbowler">Select Bowler</string>
-    <string name="createbowler">Create New Bowler</string>
+    <string name="createbowler">New Bowler</string>
     <string name="go">Enter Scores</string>
     <string name="selectleague">Select League Or Open Bowling</string>
-    <string name="createleague">Enter New League</string>
+    <string name="createleague">New League</string>
     <string name="leaguename">League Name</string>
     <string name="house">House Name</string>
     <string name="date">Enter Date</string>
@@ -35,9 +35,13 @@
     <string name="singledate">Single Date</string>
     <string name="daterange">Date Range</string>
     <string name="alldates">All Dates</string>
-    <string name="newBall">Bowling Ball Management</string>
+    <string name="newBall">Ball Manager</string>
     <string name="ballName">Enter Ball Name or Description</string>
     <string name="listBalls">List Bowling Balls</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="importData">Import Data</string>
+    <string name="export">Export Data</string>
     <string-array name="frames_array">
         <item >1</item>
         <item >2</item>

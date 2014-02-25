@@ -4,12 +4,15 @@ import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,18 +31,18 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.SimpleCursorAdapter.ViewBinder;
 
 
-public class Main extends Activity implements OnClickListener, OnItemSelectedListener {
+public class Main extends ActionBarActivity implements OnClickListener, OnItemSelectedListener, OnDateSetListener {
 	private BowlerDatabaseAdapter dbHelper;
 	
 	private Spinner nameSpinner;
 	private Spinner leagueSpinner;
-	private Button addBowlerButton;
+	//private Button addBowlerButton;
 	private Button goButton;
-	private Button addLeagueButton;
+	//private Button addLeagueButton;
 	private Button datePickButton;
 	private Button statButton;
 	private Button graphButton;
-	private Button ballButton;
+	//private Button ballButton;
 	private ImageButton fbButton;
 	private TextView tvDate;
 	private int year;
@@ -69,20 +72,20 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		nameSpinner.setOnItemSelectedListener(this);
 		leagueSpinner = (Spinner)findViewById(R.id.leagueSpinner);
 		leagueSpinner.setOnItemSelectedListener(this);
-		addBowlerButton = (Button)findViewById(R.id.newBowlerButton);
-		addBowlerButton.setOnClickListener(this);
+		//addBowlerButton = (Button)findViewById(R.id.newBowlerButton);
+		//addBowlerButton.setOnClickListener(this);
 		goButton = (Button)findViewById(R.id.scoreButton);
 		goButton.setOnClickListener(this);
-		addLeagueButton = (Button)findViewById(R.id.newLeagueButton);
-		addLeagueButton.setOnClickListener(this);
+		//addLeagueButton = (Button)findViewById(R.id.newLeagueButton);
+		//addLeagueButton.setOnClickListener(this);
 		datePickButton = (Button)findViewById(R.id.dateButton);
 		datePickButton.setOnClickListener(this);
 		statButton = (Button)findViewById(R.id.statButton);
 		statButton.setOnClickListener(this);
 		graphButton = (Button)findViewById(R.id.graphicalStatButton);
 		graphButton.setOnClickListener(this);
-		ballButton = (Button)findViewById(R.id.newBallButton);
-		ballButton.setOnClickListener(this);
+		//ballButton = (Button)findViewById(R.id.newBallButton);
+		//ballButton.setOnClickListener(this);
 		fbButton = (ImageButton)findViewById(R.id.fbButton);
 		fbButton.setOnClickListener(this);
 		
@@ -104,8 +107,8 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 	
 	@Override
@@ -117,11 +120,12 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 	@Override
 	//listener for the buttons
 	public void onClick(View v) {
+		Intent i = new Intent();
 		switch (v.getId()) {
-		case R.id.newBowlerButton:
+		/*case R.id.newBowlerButton:
 			Intent i = new Intent(Main.this, NewBowler.class);
 			startActivity(i);
-			break;
+			break;*/
 		case R.id.scoreButton:
 			if(bowler == null || league == null){
 				Toast toast = Toast.makeText(this, "You Must Select a Bowler and League, If there are none then create one.", Toast.LENGTH_LONG);
@@ -135,12 +139,12 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 					startActivity(i);
 					}
 			break;
-		case R.id.newLeagueButton:
+		/*case R.id.newLeagueButton:
 			i = new Intent(Main.this, NewLeague.class);
 			startActivity(i);
-			break;
+			break;*/
 		case R.id.dateButton:
-			showDialog(DATE_DIALOG_ID);
+			showDatePickerDialog();
 			break;
 		case R.id.statButton:
 			i = new Intent(Main.this, StatSelect.class);
@@ -150,10 +154,10 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 			i = new Intent(Main.this, StatFunctionsActivity.class);
 			startActivity(i);
 			break;
-		case R.id.newBallButton:
+		/*case R.id.newBallButton:
 			i = new Intent(Main.this, BallManager.class);
 			startActivity(i);
-			break;
+			break;*/
 		case R.id.fbButton:
     		Intent fbIntent = facebookIntent();
     		startActivity(fbIntent);
@@ -161,7 +165,7 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		}
 		
 	}
-	
+
 	@Override
 	//listens for the bowler selection to made to set the bowler name to be passed to fill the league spinner
 	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -193,8 +197,20 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
     	switch (item.getItemId()) {
-    	case R.id.about:
-    		Intent i = new Intent(Main.this, About.class);
+    	case R.id.action_createBowler:
+    		 Intent i = new Intent(Main.this, NewBowler.class);
+			 startActivity(i);
+    		 return true;
+    	case R.id.action_createLeague:
+    		 i = new Intent(Main.this, NewLeague.class);
+			 startActivity(i);
+    		 return true;
+    	case R.id.action_ball:
+    		 i = new Intent(Main.this, BallManager.class);
+			 startActivity(i);
+    		 return true;
+    	case R.id.action_about:
+    		i = new Intent(Main.this, About.class);
     		startActivity(i);
     		return true;
     	case R.id.help:
@@ -271,7 +287,7 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 				.append(year).append(" "));
 		regDate = tvDate.getText().toString();
 	}
-	
+
 	private String createSQLDate() {
 		StringBuilder s;
 		int y = year;
@@ -290,7 +306,12 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		return sqlDate;
 	}
 	
-	private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+	private void showDatePickerDialog() {
+		DialogFragment newFragment = DatePickerFragment.newInstance(1);
+	    newFragment.show(getFragmentManager(), "datePicker");
+		
+	}
+	/*private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
 		public void onDateSet(DatePicker view, int y, int m, int d) {
 			year = y;
 			month = m;
@@ -306,8 +327,10 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		return new DatePickerDialog(this, dateSetListener, year, month, day);
 		}
 		return null;
-	}
+	}*/ 
 	
+	
+
 	private void checkBlankData(){
 		//removed for version 2.0 since league table does not exist only need to check blank data in the game table
 		/* Cursor cursor = dbHelper.checkBlankLeagueData();
@@ -416,5 +439,14 @@ public class Main extends Activity implements OnClickListener, OnItemSelectedLis
 		}catch(Exception e){
 			return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/GoodBowlerStats"));
 		}
+	}
+
+	@Override
+	public void onDateSet(DatePicker view, int y, int m, int d) {
+		year = y;
+		month = m;
+		day = d;
+		updateDate();
+		createSQLDate();	
 	}
 }
